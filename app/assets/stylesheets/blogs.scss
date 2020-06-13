@@ -49,27 +49,159 @@
         }
       }
     }
-    &__categories{
+    &__side{
       width: 20%;
-      box-shadow: 0 1rem 3rem rgba(0,0,0,0.175) !important;
-      background-color: #fffaf0;
-      &__title{
+      height:100%;
+      &__profile{
+        box-shadow: 0 1rem 3rem rgba(0,0,0,0.175) !important;
+        background-color: #fffaf0;
         width: 100%;
-        height: 50px;
-        text-align: center;
-        line-height: 50px;
+        height: 500px;
+        margin-bottom:20px;
+        padding-top:20px;
+        &__title{
+          background-color: #494c4e;
+          font-size: 15px;
+          color: beige;
+          width: 180px;
+          height: 40px;
+          padding-right: 20px;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          text-transform: uppercase;
+          font-weight: bold;
+        }
+        &__photo{
+          img{
+          margin-right: 68px;
+          margin-left: 68px;
+          margin-top:40px;
+          width:120px;
+          height:120px;
+          border-radius:50%;
+          }
+        }
+        &__name{
+          width: 100%;
+          margin: 30px;
+          h1{
+            font-size:20px;
+          }
+        }
+        &__description{
+          margin:20px;
+          p{
+            font-size:12px;
+          }
+        }
+        &__snsbtn{
+          display:flex;
+          margin:30px;
+          li{
+            margin-right: 30px;
+          }
+          &__btn{
+            border-radius:50%;
+            position:relative;
+            display:inline-block;
+            width:30px;
+            height:30px;
+            font-size:35px;
+            text-decoration:none;
+            transition:.5s;
+            i{
+              font-size:60%;
+              position:absolute;
+              top:50%;
+              left:50%;
+              transform:translate(-50%,-50%);
+            }
+          }
+          &__btn:hover{
+            color:#fff !important;
+          }
+        }
+      
+    
+      .twitter{
+      border:solid 1px #55acee;
+      color:#55acee;
+      }
+      .twitter:hover{
+      border:solid 1px #55acee;
+      background:#55acee;
+      }
+      .instagram {
+      border:solid 1px #c6529a;
+      color:#c6529a;
+      font-size:35px;
+      }
+      .instagram:hover{
+      border:solid 1px #c6529a;
+      background:#c6529a;
+      color:#fff!important;
+      }
+      
+      .facebook{
+      border:solid 1px #3b5998;
+      color:#3b5998;
+      }
+      .facebook:hover{
+      border:solid 1px #3b5998;
+      background:#3b5998;
+      color:#fff!important;
+      }
+      .mail{
+      border:solid 1px #f3981d;
+      color:#f3981d;	
+      font-size:28px;
+      }
+      .mail:hover{
+      border:solid 1px #f3981d;
+      background:#f3981d;
+      color:#fff!important;
+      }
+      }
+      &__category{
+        box-shadow: 0 1rem 3rem rgba(0,0,0,0.175) !important;
+        background-color: #fffaf0;
+        width: 100%;
+        height: 400px;
         font-size: 30px;
+        padding-top:20px;
+          &__title{
+          background-color: #494c4e;
+          font-size: 15px;
+          color: beige;
+          width: 180px;
+          height: 40px;
+          padding-right: 20px;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          text-transform: uppercase;
+          font-weight: bold;
+        }
+        &__lists{
+          padding-top:20px;
+          &__list{
+            font-size:20px;
+            margin:20px;
+            border-bottom: 2px solid #fffaf0;
+          }
+        }
+
       }
     }
-
   }
 }
-
 //  ＝＝＝＝＝＝＝show＝＝＝＝＝＝＝＝
 .details__contents{
   width: 100%;
   margin-top: 60px;
   display: flex;
+  margin-bottom: 100px;
   &__article{
     box-shadow: 0 1rem 3rem rgba(0,0,0,0.175) !important;
     background-color: #fffaf0;
@@ -95,13 +227,28 @@
       &__date{
         color:#737373 ;
         font-size: 20px;
-      }     
+      }  
+      &__category{
+        background-color: #494c4e;
+        padding: 0.35em 0.7em;
+        border-radius: 10rem;
+        display: inline-block;
+        font-size:15px;
+        margin-top:20px;
+        margin-right:10px;
+        &__link{
+          text-decoration:none;
+          color: beige;
+
+        }
+      }   
     }
     &__content{
       width: 100%;
       height: 100%;
       font-size: 18px;
       line-height: 180%;
+      margin-top:20px;
       
     }
   }

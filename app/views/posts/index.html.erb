@@ -2,6 +2,7 @@
             
 <div>Admin管理画面　一覧ページ</div>
 <%= link_to "Add article", new_post_path, class: "header__right--btn" %>
+<%= link_to "Back to Blog", blogs_path %>
 
 <% if admin_signed_in? %>
     <div>Logged in</div>

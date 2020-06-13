@@ -22,33 +22,22 @@
         <i class="far fa-clock"></i>
         <%= @blog.created_at.strftime '%Y-%m-%d %H:%M:%S' %>
       </div>
+      <ul>
+        <% @blog.categories.each do |category| %>
+        <li class = "details__contents__article__titles__category">
+            <%= link_to category.text, "#", class: "details__contents__article__titles__category__link" %>
+        </li>
+        <% end %>
+      </ul>
+   
     </div>
     <div class="details__contents__article__content">
-      <%= simple_format(@blog.description) %>
-
-      <div class="details__contents__article__content__agenda">
-        <h2 class="agenda">この記事の目次</h2>
-        <ol>
-          <li>
-            <a href="#header-1">おしゃれなブログデザイン</a>
-          </li>
-          <li>
-            <a href="#header-2">シンプルなブログデザイン</a>
-          </li>
-          <li>
-            <a href="#header-3">ダミー３</a>
-          </li>
-          <li>
-            <a href="#header-4">ダミー４</a>
-          </li>
-        </ol>
-      </div>
-        <%= simple_format(@blog.content) %>
+      <%= simple_format(@blog.content) %>
     </div>
     
   </div>
-  <div class="blog__contents__categories">
-    <div class="blog__contents__categories__title">
+  <div class="blog__contents__bottom__side">
+    <div class="blog__contents__bottom__side__category">
       Category
     </div>
   </div>

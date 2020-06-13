@@ -8,8 +8,7 @@ class PostsController < ApplicationController
   end
   def create
     Post.create(post_params)
-    redirect_to root_path
-
+    redirect_to posts_path
   end
   def show
     @post = Post.find(params[:id])
@@ -26,11 +25,11 @@ class PostsController < ApplicationController
   def destroy
     post = Post.find(params[:id])
     post.destroy
-    redirect_to root_path
+    redirect_to posts_path
   end
   private
   def post_params
-    params.require(:post).permit(:title, :content, :image)
+    params.require(:post).permit(:title, :content, :image, :description, category_ids: [])
   end
 
 end
