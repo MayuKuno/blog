@@ -1,0 +1,35 @@
+            
+            
+<div>Admin管理画面　一覧ページ</div>
+<%= link_to "Add article", new_post_path, class: "header__right--btn" %>
+
+<% if admin_signed_in? %>
+    <div>Logged in</div>
+    <%= current_admin.email %>
+    <%= link_to "Log out", destroy_admin_session_path, method: :delete %>
+<% else %>
+<% end %>
+
+
+<% @posts.each do |post| %>
+ <div class="content">
+    <div class="content__left">
+      <div class="content__left--image"></div>
+    </div>
+    <div class="content__right">
+      <div class="content__right__top">
+        <%= link_to post.title, post_path(post.id), class: "content__right__top--title" %>
+      </div>
+      <div class="content__right__bottom">
+        <div class="content__right__bottom--userName">
+        </div>
+        <div class="content__right__bottom--date">
+          <%= post.created_at %>
+        </div>
+    <%= link_to "Edit", edit_post_path(post.id), class: "postManage__edit" %>
+    <%= link_to "Delete", post_path(post.id), method: :delete, class: "postManage__delete" %>
+
+      </div>
+    </div>
+  </div>
+<% end %>

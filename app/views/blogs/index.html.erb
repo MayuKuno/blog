@@ -1,0 +1,68 @@
+<header>
+  <div class="container">
+    <div class="container__logo">
+      <a class="container__logo__content" href="/">NINEFS</a>
+    </div>
+    <ul class="navigation">
+      <li class="navigation__list-item "><a href="/about">About</a></li>
+      <li class="navigation__list-item "><a href="/works">WORK</a></li>
+      <li class="navigation__list-item blog-nav"><a href="/blogs">BLOG</a></li>
+    </ul>
+  </div>
+</header>
+<!-- ======================================== -->
+<div class="blog__contents">
+    <div class="blog__contents__top">
+      <img src="/assets/blog.jpg" alt="article"/>
+    </div>
+    <div class="blog__contents__bottom">
+      <div class="blog__contents__bottom__articles">
+      <% @blogs.each do |blog| %>
+        <div class="blog__contents__bottom__articles__article">
+          <div class="blog__contents__bottom__articles__article__top">
+            <div class="blog__contents__bottom__articles__article__top__image">
+              <img src="<%= "#{blog.image}" %>">
+            </div>
+          </div>
+          <div class="content__right">
+            <div class="content__right__top">
+              <%= link_to blog.title, blog_path(blog.id), class: "content__right__top--title" %>
+            </div>
+            <div class="content__right__bottom">
+              <div class="content__right__bottom--userName">
+              </div>
+              <div class="content__right__bottom--date">
+                <%= blog.created_at %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      </div>
+      <div class="blog__contents__bottom__categories">
+        <div class="blog__contents__bottom__categories__title">
+          Category
+        </div>
+        <%= link_to "Admin Login", new_admin_session_path %>
+
+      </div>
+    </div>
+
+
+</div>
+
+
+
+    <!-- footer -->
+<footer>
+  <div class="container">
+  <ul class="navigation">
+      <li class="navigation__list-item "><a href="/about">About</a></li>
+      <li class="navigation__list-item "><a href="/works">WORK</a></li>
+      <li class="navigation__list-item blog-nav"><a href="/blogs">BLOG</a></li>
+    </ul>
+    <div class="container__logo">
+      <a class="container__logo__content" href="/">NINEFS</a>
+    </div>
+  </div>
+</footer>

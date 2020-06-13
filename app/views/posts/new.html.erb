@@ -1,0 +1,16 @@
+<div>Admin管理画面 作成ページ</div>
+
+<div class="content__title">
+  新規記事の作成
+</div>
+
+<%= form_with model: @post, class: :form, local: true do |form| %>
+  <%= form.text_field :title, placeholder: :タイトル, class: :form__title %>
+  <%= form.text_area :description, placeholder: :ディスクリプション, class: :form__text %>
+  <%= form.text_area :content, placeholder: :ブログ本文, class: :form__text %>
+  <%= form.label :image, class: 'main__bottom__middle__box' do %>
+  <%= icon('fas', 'image', class: 'main__bottom__middle__box__img') %>
+  <%= form.file_field :image, class: 'main__bottom__middle__box__file' %>
+  <% end %>
+  <%= form.submit '投稿する', class: :form__btn %>
+<% end %>

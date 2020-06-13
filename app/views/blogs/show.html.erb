@@ -1,0 +1,69 @@
+
+<header>
+  <div class="container">
+    <div class="container__logo">
+      <a class="container__logo__content" href="/">NINEFS</a>
+    </div>
+    <ul class="navigation">
+      <li class="navigation__list-item "><a href="/about">About</a></li>
+      <li class="navigation__list-item "><a href="/works">WORK</a></li>
+      <li class="navigation__list-item blog-nav"><a href="/blogs">BLOG</a></li>
+    </ul>
+  </div>
+</header>
+<!-- ======================================== -->
+<div class="details__contents">
+  <div class="details__contents__article">
+    <div class="details__contents__article__titles">
+      <div class="details__contents__article__titles__title">
+        <%= simple_format(@blog.title) %>
+      </div>
+      <div class="details__contents__article__titles__date">
+        <i class="far fa-clock"></i>
+        <%= @blog.created_at.strftime '%Y-%m-%d %H:%M:%S' %>
+      </div>
+    </div>
+    <div class="details__contents__article__content">
+      <%= simple_format(@blog.description) %>
+
+      <div class="details__contents__article__content__agenda">
+        <h2 class="agenda">この記事の目次</h2>
+        <ol>
+          <li>
+            <a href="#header-1">おしゃれなブログデザイン</a>
+          </li>
+          <li>
+            <a href="#header-2">シンプルなブログデザイン</a>
+          </li>
+          <li>
+            <a href="#header-3">ダミー３</a>
+          </li>
+          <li>
+            <a href="#header-4">ダミー４</a>
+          </li>
+        </ol>
+      </div>
+        <%= simple_format(@blog.content) %>
+    </div>
+    
+  </div>
+  <div class="blog__contents__categories">
+    <div class="blog__contents__categories__title">
+      Category
+    </div>
+  </div>
+</div>
+
+    <!-- footer -->
+<footer>
+  <div class="container">
+  <ul class="navigation">
+      <li class="navigation__list-item "><a href="/about">About</a></li>
+      <li class="navigation__list-item "><a href="/works">WORK</a></li>
+      <li class="navigation__list-item blog-nav"><a href="/blogs">BLOG</a></li>
+    </ul>
+    <div class="container__logo">
+      <a class="container__logo__content" href="/">NINEFS</a>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,183 @@
+.about-nav a{
+  border-bottom:2px solid #f6ac00;
+  opacity:1;
+}
+.about{
+  height: 100%;
+  margin-top: 100px;
+  margin-left: 60px;
+  margin-right: 60px;
+  h1{
+    font-size: 40px;
+  }
+    &__top{
+    display: flex;
+    height: 100%;
+      &__photo{
+      margin-bottom: 80px;
+        img{
+          height: 300px;
+          width: 250px;
+        }
+      }
+      &__right{
+        width: 100%;
+        height: 300px;
+        position: relative;
+        margin-left: 100px;
+        margin-right: 60px;
+        h1{
+          font-size: 60px;
+        }
+        p{
+          margin-top: 30px;
+          font-size: 20px;
+        }
+        &__snsbtn{
+          display: flex;
+          position: absolute;
+          bottom: 0;
+          li{
+            margin-right: 30px;
+          }
+          &__btn{
+            border-radius:50%;
+            position:relative;
+            display:inline-block;
+            width:50px;
+            height:50px;
+            font-size:30px;
+            text-decoration:none;
+            transition:.5s;
+            i{
+              position:absolute;
+              top:50%;
+              left:50%;
+              transform:translate(-50%,-50%);
+            }
+          }
+          &__btn:hover{
+            color:#fff !important;
+          }
+        }
+
+      }
+    .twitter{
+      border:solid 1px #55acee;
+      color:#55acee;
+      }
+      .twitter:hover{
+      border:solid 1px #55acee;
+      background:#55acee;
+      }
+      .instagram {
+      border:solid 1px #c6529a;
+      color:#c6529a;
+      font-size:35px;
+      }
+      .instagram:hover{
+      border:solid 1px #c6529a;
+      background:#c6529a;
+      color:#fff!important;
+      }
+      
+      .facebook{
+      border:solid 1px #3b5998;
+      color:#3b5998;
+      }
+      .facebook:hover{
+      border:solid 1px #3b5998;
+      background:#3b5998;
+      color:#fff!important;
+      }
+      .mail{
+      border:solid 1px #f3981d;
+      color:#f3981d;	
+      font-size:28px;
+      }
+      .mail:hover{
+      border:solid 1px #f3981d;
+      background:#f3981d;
+      color:#fff!important;
+      }
+      
+    }
+    &__bottom{
+      margin-top: 10px;
+      margin-bottom: 60px;
+      display: flex;
+      height: 100%;
+      &__experiences{
+        width: 50%;
+        &__timeline {
+          list-style: none;
+          margin: 60px 0 30px 120px;
+          padding-left: 30px;
+          width: 65%;
+          border-left: 8px solid #eee9dc;
+          li {
+            margin: 40px 0;
+            position: relative;
+            h2{
+              padding-top: 15px;
+            }
+            p{
+              margin: 0 0 15px;
+            }
+          }
+          &__date {
+            margin-top: -10px;
+            top: 50%;
+            left: -158px;
+            font-size: 13px;
+            line-height: 20px;
+            position: absolute;
+          }
+          &__circle {
+            margin-top: -10px;
+            top: 50%;
+            left: -44px;
+            width: 20px;
+            height: 20px;
+            background: #494c4e;
+            border: 5px solid #eee9dc;
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+          }
+        }
+      }
+      &__skills{
+        margin-left: 60px;
+        &__container{
+          margin-top: 60px;
+          &__skill{
+            display: flex;
+            margin-bottom: 40px;
+            &__graph {
+              position: relative; 
+              width: 378px;
+              border: 1px solid #f6ac00;
+              padding: 2px;
+              margin-left: 40px;
+              &__bar{
+                display: block;
+                position: relative;
+                background: #f6ac00;
+                text-align: center;
+                color: #f0ffff;
+                height: 2em;
+                line-height: 2em;
+              }
+            }
+          }
+        }
+      }
+    h2{
+      font-size:20px ;
+      display: block;
+      width: 150px;
+    }
+    }
+
+}
