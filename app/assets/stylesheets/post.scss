@@ -1,82 +1,282 @@
-// 以下はそのまま持ってきている
-.chat-group-form {
-  width: 980px;
-  margin: 60px auto;
-  padding: 40px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-sizing: border-box;
-  &__errors {
-    margin: 30px 0;
-    padding: 20px 40px;
-    border: 1px solid #ddd;
-    border-radius: 2px;
-    text-align: center;
-  }
-  &__label {
-    display: block;
-    line-height: 50px;
-    font-weight: bold;
-    text-align: right;
-  }
-  &__input {
-    float: left;
-    width: 100%;
-    line-height: 30px;
-    padding: 10px 15px;
-    box-sizing: border-box;
-  }
-  &__action-btn {
-    display: inline-block;
-    padding: 12px 20px;
-    color: #fff;
-    background-color: #38aef0;
-    border: 0;
-  }
-  &__field {
-    margin-top: 30px;
-    &:after {
-      content: "";
-      clear: both;
-      display: block;
+.admin__contents{
+  width: 100%;
+  // height: 100vh;
+  margin:60px 0;
+  padding: 0 50px;
+  &__nav{
+    p{
+      font-size: 30px;
+      margin-bottom: 30px;
+      font-weight: bold;
     }
-    &--left {
-      float: left;
-      width: 30%;
-      padding-right: 20px;
-      padding-left: 20px;
-      box-sizing: border-box;
+    &__content{
+      background: linear-gradient(-135deg, beige, #545454);
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      color: white;
+      &__user{
+        font-size: 20px;
+        a{
+          text-decoration: none;
+          background-color: black;
+          color: white;
+          padding: 0 20px;
+
+        }
+      }
+      &__newarticle{
+        background-color: black;
+        height: 60px;
+        line-height: 60px;
+        padding: 0 20px;
+        &__btn{
+            color: white;
+            text-decoration: none;
+            vertical-align: middle;
+          }
+      }
     }
-    &--right {
-      float: right;
-      width: 70%;
+  }
+
+  &__main{
+    // height: 70%;
+    table {
+      border-collapse: collapse;
+      margin: 0 auto;
+      padding: 0;
+      width: 100%;
+      
+      thead{
+        tr{
+          background-color: #545454;
+          color:#fff;
+          font-size: 15px;
+          th{
+            padding: 10px 60px;
+            text-align: center;
+
+          }
+        }
+      }
+      tr {
+        background-color: #fff;
+        border-bottom: 2px solid #fff;
+        text-align: center;
+        font-size: 15px;
+
+        td{
+          padding: 20px;
+        }
+
+      }
+      tr:nth-child(even){
+        background-color: #eee;
+      }
     }
   }
 }
 
-.chat-group-user {
-  padding: 0 15px;
-  line-height: 50px;
-  font-size: 14px;
-  border-bottom: 1px solid #ddd;
-  &:after {
-    content: "";
-    clear: both;
-    display: block;
+.postManage{
+  display: flex;
+  justify-content: center;
+  &__preview{
+    margin-right: 20px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
   }
-  &__name {
-    float: left;
+  &__edit{
+    margin-right: 20px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
   }
-  &__btn {
-    float: right;
-    display: inline-block;
-    cursor: pointer;
-    &--add {
-      color: #38aef0;
+  &__delete{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+  }
+}
+// @media screen and (max-width: 600px) {
+//   table {
+//     border: 0;
+//     width:100%
+//   }
+//   table th{
+//     background-color: #fd6767;
+//     display: block;
+//     border-right: none;
+//   }
+//   table thead {
+//     border: none;
+//     clip: rect(0 0 0 0);
+//     height: 1px;
+//     margin: -1px;
+//     overflow: hidden;
+//     padding: 0;
+//     position: absolute;
+//     width: 1px;
+//   }
+//   table tr {
+//     display: block;
+//     margin-bottom: .625em;
+//     border: 1px solid #fd6767;
+//   }
+//   table td {
+//     border-bottom: 1px dotted #bbb;
+//     display: block;
+//     font-size: .8em;
+//     text-align: right;
+//     position: relative;
+//     padding: 1.5em 1em 1.5em 4em;
+//     border-right: none;
+//   }
+  
+//   table td::before {
+//     content: attr(data-label);
+//     font-weight: bold;
+//     position: absolute;
+//     left: 10px;
+//     color: #000;
+//   }
+//   table td:last-child {
+//     border-bottom: 0;
+//   }
+//   table tbody th {
+//     color: #fff;
+//     padding: 1em
+// }
+//   table tr:nth-child(even){
+//   background-color: #fff;
+// }
+// }
+
+.adminnew_contents{
+  width: 100%;
+  margin:60px 0;
+  padding: 0 50px;
+  &__title{
+    background: linear-gradient(-135deg, beige, #545454);
+    color: white;
+    height: 100px;
+    line-height: 100px;
+  }
+  &__form{
+    width: 100%;
+    // padding: 200px;
+    // margin: 0 auto;
+    &__item{
+    margin: 20px auto;
+    width: 60%;
+    font-weight: bold;
     }
-    &--remove {
-      color: #f05050;
+    &__title{
+      display: block;
+      width: 60%;
+      height: 40px;
+      margin: 20px auto;
+
+    }
+    &__images{
+      display: flex;
+      margin: auto;
+      width: 60%;
+      margin-top: 60px;
+      &__image{
+        display: block;
+        width: 60%;
+        height: 40px;
+        margin: 80px auto;
+        &__img{
+          font-size: 12px;
+          background-color: black;
+          color: white;
+          padding: 10px;
+          width: 200px;
+          text-align: center;
+          margin-left:30px ;
+        }
+        &__file{
+          display: none;
+
+        }
+      }
+      &__show{
+        width: 500px;
+        height: 200px;
+        #img_prev{
+          width: auto;
+          height: 180px;
+        }
+      }
+    }
+    &__description{
+      display: block;
+      width: 60%;
+      height: 80px;
+      margin: 20px auto;
+    }
+    &__content{
+      display: block;
+      width: 60%;
+      height: 300px;
+      margin: 20px auto;
+    }
+    &__category{
+      display: block;
+      width: 60%;
+      height: 40px;
+      margin: 20px auto;
+      padding-top: 20px;
+    }
+    input[type="checkbox"] { 
+      display: none; 
+
+    }
+
+    input[type="checkbox"] + label {
+      display: inline-block;
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 20px;
+      margin-right: 41px;
+      color: #ddd;
+      cursor: pointer;
+    }
+
+    input[type="checkbox"] + label:before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      border: 1px solid #545454;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: all .12s, border-color .08s;
+    }
+
+    input[type="checkbox"]:checked + label:before {
+      width: 10px;
+      top: -5px;
+      left: 5px;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      transform: rotate(45deg);
+    }
+    &__btn{
+      display: block;
+      width: 60%;
+      height: 40px;
+      margin: 20px auto;
+
     }
   }
 }
+
+
+

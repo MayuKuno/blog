@@ -36,13 +36,46 @@
     </div>
     
   </div>
-  <div class="blog__contents__bottom__side">
-    <div class="blog__contents__bottom__side__category">
-      Category
-    </div>
-  </div>
-</div>
+      <div class="blog__contents__bottom__side">
+        <div class="blog__contents__bottom__side__profile">
+          <div class="blog__contents__bottom__side__profile__title"> Profile</div>
+            <div class="blog__contents__bottom__side__profile__photo">
+              <img src="/assets/self.jpg" alt="Mayu Kuno" />
+            </div>
+            <div class="blog__contents__bottom__side__profile__name">
+                <h1>Mayu Kuno</h1>
+            </div>
+            <div class="blog__contents__bottom__side__profile__description">
+                <p>
+                エンジニアになるためプログラミングを勉強しています。<br>
+                プログラミングで学んだことのアウトプットをブログにしていきます。<br>
+                近い未来にカナダ移住をするために情報収集しています。
+                </p>
+            </div>
+            <ul class="blog__contents__bottom__side__profile__snsbtn">
+              <li><a href="https://twitter.com/CoderNinefs" class="blog__contents__bottom__side__profile__snsbtn__btn twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="https://www.instagram.com/mayu_k06/?hl=ja" class="blog__contents__bottom__side__profile__snsbtn__btn instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="https://www.facebook.com/mayukuno1006/" class="blog__contents__bottom__side__profile__snsbtn__btn facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="https://www.facebook.com/mayukuno1006/" class="blog__contents__bottom__side__profile__snsbtn__btn mail" target="_blank"><i class="far fa-envelope"></i></a></li>
+            </ul>
+        </div>
+        <div class="blog__contents__bottom__side__category">
+          <div class="blog__contents__bottom__side__category__title"> Category</div>
+          <ul class="blog__contents__bottom__side__category__list">
+            <li class="blog__contents__bottom__side__category__lists__list">HTML</li>
+            <li class="blog__contents__bottom__side__category__lists__list">CSS</li>
+            <li class="blog__contents__bottom__side__category__lists__list">JQuery</li>
+            <li class="blog__contents__bottom__side__category__lists__list">Javascript</li>
+            <li class="blog__contents__bottom__side__category__lists__list">Ruby</li>
+            <li class="blog__contents__bottom__side__category__lists__list">Rails</li>
 
+          </ul>
+
+        </div>
+        <%= link_to "Admin Login", new_admin_session_path %>
+
+      </div>
+ </div>
     <!-- footer -->
 <footer>
   <div class="container">

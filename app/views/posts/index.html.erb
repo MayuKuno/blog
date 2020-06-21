@@ -1,36 +1,73 @@
-            
-            
-<div>Admin管理画面　一覧ページ</div>
-<%= link_to "Add article", new_post_path, class: "header__right--btn" %>
-<%= link_to "Back to Blog", blogs_path %>
-
-<% if admin_signed_in? %>
-    <div>Logged in</div>
-    <%= current_admin.email %>
-    <%= link_to "Log out", destroy_admin_session_path, method: :delete %>
-<% else %>
-<% end %>
-
-
-<% @posts.each do |post| %>
- <div class="content">
-    <div class="content__left">
-      <div class="content__left--image"></div>
+         
+ <header>
+  <div class="container">
+    <div class="container__logo">
+      <a class="container__logo__content" href="/">NINEFS</a>
     </div>
-    <div class="content__right">
-      <div class="content__right__top">
-        <%= link_to post.title, post_path(post.id), class: "content__right__top--title" %>
-      </div>
-      <div class="content__right__bottom">
-        <div class="content__right__bottom--userName">
-        </div>
-        <div class="content__right__bottom--date">
-          <%= post.created_at %>
-        </div>
-    <%= link_to "Edit", edit_post_path(post.id), class: "postManage__edit" %>
-    <%= link_to "Delete", post_path(post.id), method: :delete, class: "postManage__delete" %>
-
+    <ul class="navigation">
+      <li class="navigation__list-item "><a href="/about">About</a></li>
+      <li class="navigation__list-item "><a href="/works">WORK</a></li>
+      <li class="navigation__list-item blog-nav"><a href="/blogs">BLOG</a></li>
+    </ul>
+  </div>
+</header>
+<!-- ======================================== -->           
+<div class="admin__contents">
+  <div class="admin__contents__nav">
+    <p>Dashboard</p>
+    <div class="admin__contents__nav__content">
+      <div class="admin__contents__nav__content__user">
+       Logged in as<br><%= current_admin.name %>
+       <div>
+        <%= link_to "Log out", destroy_admin_session_path, method: :delete %>
+       </div>
+       </div>
+      <div class="admin__contents__nav__content__newarticle">
+        <%= link_to "Add article", new_post_path, class: "admin__contents__nav__content__newarticle__btn" %>
       </div>
     </div>
   </div>
-<% end %>
+  <div class="admin__contents__main">
+    <table>
+      <thead>
+          <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Title</th>
+              <th scope="col">Description</th>
+              <th scope="col">Created_at</th>
+              <th scope="col"></th>
+
+          </tr>
+      </thead>
+      <tbody>
+        <% @posts.each do |post| %>
+        <tr>
+          <td><%= post.id%></td>
+          <td><%= post.title%></td>
+          <td><%= post.description%></td>
+          <td><%= post.created_at.strftime '%Y-%m-%d'%></td>
+          <td>
+            <%= link_to "Preview", post_path(post.id), class: "postManage__preview" %>
+            <%= link_to "Edit", edit_post_path(post.id), class: "postManage__edit" %>
+            <%= link_to "Delete", post_path(post.id), method: :delete, class: "postManage__delete" %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>    
+  </div>
+</div>
+
+
+<footer>
+  <div class="container">
+  <ul class="navigation">
+      <li class="navigation__list-item "><a href="/about">About</a></li>
+      <li class="navigation__list-item "><a href="/works">WORK</a></li>
+      <li class="navigation__list-item blog-nav"><a href="/blogs">BLOG</a></li>
+    </ul>
+    <div class="container__logo">
+      <a class="container__logo__content" href="/">NINEFS</a>
+    </div>
+  </div>
+</footer>

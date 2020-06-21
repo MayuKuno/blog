@@ -18,13 +18,14 @@
         img{
           height: 300px;
           width: 250px;
+          margin-left: 50px;
         }
       }
       &__right{
         width: 100%;
         height: 300px;
         position: relative;
-        margin-left: 100px;
+        margin-left: 150px;
         margin-right: 60px;
         h1{
           font-size: 60px;
@@ -109,27 +110,37 @@
       height: 100%;
       &__experiences{
         width: 50%;
+        // background-color: beige;
+        h1{
+          border-bottom: solid 2px #494c4e;
+          padding-bottom: 15px;
+          width: 300px;
+          font-size: 24px;
+
+        }
+
         &__timeline {
           list-style: none;
-          margin: 60px 0 30px 120px;
+          margin: 20px 0 30px 120px;
           padding-left: 30px;
           width: 65%;
           border-left: 8px solid #eee9dc;
           li {
             margin: 40px 0;
             position: relative;
-            h2{
-              padding-top: 15px;
-            }
-            p{
-              margin: 0 0 15px;
-            }
+          }
+          &__title{
+            width: 300px;
+            font-size: 20px;
+            font-weight: bold;
+            border-bottom: solid 1.5px #494c4e;
+            padding-bottom: 5px;
           }
           &__date {
             margin-top: -10px;
             top: 50%;
             left: -158px;
-            font-size: 13px;
+            font-size: 15px;
             line-height: 20px;
             position: absolute;
           }
@@ -144,20 +155,36 @@
             border-radius: 50%;
             display: block;
             position: absolute;
-          }
+          
+        }
+        &__description{
+          padding-top: 5px;
+          font-size: 15px;
         }
       }
+    }
+
       &__skills{
         margin-left: 60px;
+        width: 50%;
+        position: relative;
+        h1{
+          border-bottom: solid 2px #494c4e;
+          padding-bottom: 15px;
+          width: 300px;
+          font-size: 24px;
+        }
+
         &__container{
-          margin-top: 60px;
+          margin-top: 40px;
           &__skill{
             display: flex;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
+            margin-left: 10px;
             &__graph {
               position: relative; 
-              width: 378px;
-              border: 1px solid #f6ac00;
+              width: 300px;
+              border: 1px solid #494c4e;
               padding: 2px;
               margin-left: 40px;
               &__bar{
@@ -168,10 +195,58 @@
                 color: #f0ffff;
                 height: 2em;
                 line-height: 2em;
+                animation: bar-animation 1 3s;
+
+              }
+              @keyframes bar-animation{
+                0%{
+                  width: 0px;
+                }
               }
             }
           }
+      }
+      &__languages{
+        margin-top: 30px;
+        position: absolute;
+        bottom: 30px;
+ 
+        &__language{
+          margin-left: 10px;
+          margin-top: 30px;
+          &__title{
+            span{
+              margin-left: 10px;
+              font-size: 13px;
+            }
+
+          }
+          &__description{
+            margin-left: 30px;
+            margin-top: 30px;
+            &__graph{
+              position: relative; 
+              width: 200px;
+              border: 1px solid #494c4e;
+              padding: 2px;
+              margin-left: 30px;
+              margin-bottom: 15px;
+              &__bar{
+                display: block;
+                position: relative;
+                background: #494c4e;
+                text-align: center;
+                color: #f0ffff;
+                height: 20px;
+                line-height: 20px;
+                animation: bar-animation 1 3s;
+
+              }
+            }
+
+          }
         }
+      }
       }
     h2{
       font-size:20px ;

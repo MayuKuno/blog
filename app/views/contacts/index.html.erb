@@ -1,0 +1,214 @@
+    <header>
+      <div class="container">
+        <div class="container__logo">
+          <a class="container__logo__content" href="/">NINEFS</a>
+        </div>
+        <ul class="navigation">
+          <li class="navigation__list-item "><a href="/about">About</a></li>
+          <li class="navigation__list-item "><a href="/works">WORK</a></li>
+          <li class="navigation__list-item "><a href="/blogs">BLOG</a></li>
+        </ul>
+      </div>
+    </header>
+<div class="contents">
+<!-- ====================top==================== -->
+  <div class="contents__top">
+   <div class="contents__top__introduction">
+    <h1>
+    Hello, my name is Mayu.<br> I am just a queer individual who is hooked on coding.
+    </h1>
+    </div>
+    <div class="contents__top__photo">
+      <img src="/assets/main.jpg" alt="Mayu Kuno"/>
+    </div>
+  </div>
+<!-- ====================work==================== -->
+  <div class="contents__content" >
+    <h2 class="contents__content__ttl">Works</h2>
+    <ul class="contents__content__workList">
+      <li>
+        <div class="contents__content__workList__list">
+          <div class="contents__content__workList__list__img">
+            <img src="/assets/main.jpg"/>
+          </div>
+          <div class="contents__content__workList__list__details">
+            <div class="contents__content__workList__list__details__name">
+              Portfolio
+            </div>
+          
+            <ul class="contents__content__workList__list__details__lang">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Ruby</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="contents__content__workList__list">
+          <div class="contents__content__workList__list__img">
+            <img src="/assets/main.jpg"/>
+          </div>
+          <div class="contents__content__workList__list__details">
+            <div class="contents__content__workList__list__details__name">
+              Tweetapp
+            </div>
+      
+            <ul class="contents__content__workList__list__details__lang">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Ruby</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+            <li>
+        <div class="contents__content__workList__list">
+          <div class="contents__content__workList__list__img">
+            <img src="/assets/main.jpg"/>
+          </div>
+          <div class="contents__content__workList__list__details">
+            <div class="contents__content__workList__list__details__name">
+              Textapp
+            </div>
+      
+            <ul class="contents__content__workList__list__details__lang">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Ruby</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="contents__content__all">
+      <%= link_to "View all works", works_path %>
+    </div>
+  </div>
+
+<!-- ====================blog==================== -->
+  <div class="contents__content">
+    <h2 class="contents__content__ttl">Blogs</h2>
+    <ul class="contents__content__blogList">
+      <li>
+        <div class="contents__content__blogList__list">
+          <a href="#">
+            <img src="/assets/main.jpg"/>
+            <div class="contents__content__blogList__list__title">
+              <%= link_to "Blog's title 1", "#" %>
+            </div>
+            <div class="contents__content__blogList__list__comment">
+              blog's description blog's description blog's description blog's description blog's
+            </div>
+          </a>
+          <div class="contents__content__blogList__list__detail">
+          <a href="#" >more</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="contents__content__blogList__list">
+          <a href="#">
+            <img src="/assets/main.jpg"/>
+            <div class="contents__content__blogList__list__title">
+              <%= link_to "Blog's title 2", "#" %>
+            </div>
+            <div class="contents__content__blogList__list__comment">
+              blog's description blog's description blog's description blog's description blog's
+            </div>
+          </a>
+          <div class="contents__content__blogList__list__detail">
+          <a href="#" >more</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="contents__content__blogList__list">
+          <a href="#">
+            <img src="/assets/main.jpg"/>
+            <div class="contents__content__blogList__list__title">
+              <%= link_to "Blog's title 3", "#" %>
+            </div>
+            <div class="contents__content__blogList__list__comment">
+              blog's description blog's description blog's description blog's description blog's
+            </div>
+          </a>
+          <div class="contents__content__blogList__list__detail">
+          <a href="#" >more</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="contents__content__all">
+      <%= link_to "View all posts", blogs_path %>
+    </div>
+
+  </div>
+
+<!-- ====================getintouch==================== -->
+  <div class="contents__content">
+    <h2 class="contents__content__ttl">Get in touch</h2>
+    <div class="contents__content__form">
+
+            <div class="contact-form row">
+        <%= form_with(model: @contact, local: true) do |f| %>
+          <div class="form-field col x-50">
+            <%= f.text_field :name, class: 'input-text js-input'%>
+            <label class="label" for="name">Name</label>
+          </div>
+
+          <div class="form-field col x-50">
+            <%= f.email_field :email, class: 'input-text js-input' %>
+            <label class="label" for="email">E-mail</label>
+          </div>
+
+
+          <div class="form-field col x-100">
+            <%= f.text_area :message, class: 'input-text js-input' %>
+            <label class="label" for="message">Message</label>
+          </div>
+
+          <div class="form-field col x-100 align-center">
+            <%= f.submit 'Send', class: 'submit-btn' %>
+          </div>
+          	
+            <% end %>
+          </div>
+   </div>
+        
+  </div>
+
+
+
+
+
+<!-- ====================form==================== -->
+  <div id="getintouch" class="contents__content">
+      <div class="social-btns">
+        <a class="btn twitter" href="https://twitter.com/CoderNinefs" target="_blank">
+          <i class="fab fa-twitter home-twitter"></i>
+        </a>
+        <a class="btn instagram" href="https://www.instagram.com/mayu_k06/?hl=ja" target="_blank">
+          <i class="fab fa-instagram home-insta"></i>
+        </a>    
+        <a class="btn github" href="https://github.com/MayuKuno" target="_blank">
+          <i class="fab fa-github home-git"></i>
+        </a>
+        <a class="btn facebook" href="https://www.facebook.com/mayukuno1006/" target="_blank">
+          <i class="fab fa-facebook-f home-fb"></i>
+        </a>
+      </div>
+    </div>
+</div>
+<footer>
+  <div class="container">
+  <ul class="navigation">
+      <li class="navigation__list-item "><a href="/about">About</a></li>
+      <li class="navigation__list-item "><a href="/works">WORK</a></li>
+      <li class="navigation__list-item "><a href="/blogs">BLOG</a></li>
+    </ul>
+    <div class="container__logo">
+      <a class="container__logo__content" href="/">NINEFS</a>
+    </div>
+  </div>
+</footer>
