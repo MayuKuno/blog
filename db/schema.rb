@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_19_144531) do
+ActiveRecord::Schema.define(version: 2020_06_21_102357) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -48,6 +48,13 @@ ActiveRecord::Schema.define(version: 2020_06_19_144531) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "languages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "text", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["text"], name: "index_languages_on_text", unique: true
+  end
+
   create_table "post_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "post_id"
     t.bigint "category_id"
@@ -66,6 +73,28 @@ ActiveRecord::Schema.define(version: 2020_06_19_144531) do
     t.string "description"
   end
 
+  create_table "work_languages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "work_id"
+    t.bigint "language_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_work_languages_on_language_id"
+    t.index ["work_id"], name: "index_work_languages_on_work_id"
+  end
+
+  create_table "works", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "description", null: false
+    t.string "URL", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["URL"], name: "index_works_on_URL", unique: true
+    t.index ["description"], name: "index_works_on_description", unique: true
+    t.index ["title"], name: "index_works_on_title", unique: true
+  end
+
   add_foreign_key "post_categories", "categories"
   add_foreign_key "post_categories", "posts"
+  add_foreign_key "work_languages", "languages"
+  add_foreign_key "work_languages", "works"
 end

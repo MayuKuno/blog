@@ -10,163 +10,99 @@
     </ul>
   </div>
 </header>
+  <!-- ======================================== -->
+  <div class="work__top">My Works</div>
 
-<div class='tabs'>
-  <div class='tab-buttons'>
-    <span class='content1'>All</span>
-    <span class='content2'>HTML・CSS・JQuery</span>
-    <span class='content3'>Ruby</span>
-    <div id='lamp' class='content1'></div>
+  <div class="work__contents">
+    <div class='work__contents__tabs'>
+      <div class='work__contents__tabs__tab-buttons'>
+        <span class='content1'>All</span>
+        <span class='content2'>Ruby on Rails</span>
+        <span class='content3'>Python</span>
+        <div id='lamp' class='content1'></div>
+      </div>
+    </div>
+
+  <!-- ======================================== -->
+  <div class="work__contents__tab-contents">
+  <div class="work__contents__tab-content content1">
+    <% @works.each do |work| %>
+    <div class="work__contents__tab-content__list">
+      <div class="work__contents__tab-content__list__img">
+        <img src="/assets/main.jpg"/>
+      </div>
+      <div class="work__contents__tab-content__list__details">
+        <div class="work__contents__tab-content__list__details__name">
+          <%= link_to work.title, "#" %>
+        </div>
+        <ul class="work__contents__tab-content__list__details__languages">
+          <% work.languages.each do |language| %>
+          <li class = "work__contents__tab-content__list__details__languages__lang">
+               <%= language.text %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <% end %>
   </div>
   <!-- ======================================== -->
-  <ul class='tab-content'>
-  <!-- ======================================== -->
-    <li class='content1'>
-      <ul class="content-work">
-        <li>
-          <div class="work__contents__works__work__img">
+  <div class="work__contents__tab-content content2">
+    <% @works.each do |work| %>
+    <% work.languages.each do |language| %>
+    <% if language.text.include?("Ruby") %>
+      <div class="work__contents__tab-content__list">
+        <div class="work__contents__tab-content__list__img">
+          <img src="/assets/main.jpg"/>
+        </div>
+        <div class="work__contents__tab-content__list__details">
+          <div class="work__contents__tab-content__list__details__name">
+            <%= link_to work.title, "#" %>
           </div>
-          <div class="work__contents__works__work__details">
-            <div class="work__contents__works__work__details__name">
-              Portfolio1
-            </div>
-            <ul class="work__contents__works__work__details__lang">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Ruby</li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-  <!-- ======================================== -->
-      <ul class="content-work">
-        <li>
-          <div class="work__contents__works__work__img">
-          </div>
-          <div class="work__contents__works__work__details">
-            <div class="work__contents__works__work__details__name">
-              Portfolio2
-            </div>
-            <ul class="work__contents__works__work__details__lang">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Ruby</li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-     <ul class="content-work">
-        <li>
-          <div class="work__contents__works__work__img">
-          </div>
-          <div class="work__contents__works__work__details">
-            <div class="work__contents__works__work__details__name">
-              Portfolio3
-            </div>
-            <ul class="work__contents__works__work__details__lang">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Ruby</li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-     <ul class="content-work">
-        <li>
-          <div class="work__contents__works__work__img">
-          </div>
-          <div class="work__contents__works__work__details">
-            <div class="work__contents__works__work__details__name">
-              Portfolio4
-            </div>
-            <ul class="work__contents__works__work__details__lang">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Ruby</li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </li>
+          <ul class="work__contents__tab-content__list__details__languages">
+            <li class = "work__contents__tab-content__list__details__languages__lang">
+                <%= language.text %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <% else %>
+      <div class="work__contents__tab-content__none"></div>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
+
 <!-- ======================================== -->
-    <li class='content2'>
-      <ul class="content-work">
-        <li>
-          <div class="work__contents__works__work__img">
+  <div class="work__contents__tab-content content3">
+    <% @works.each do |work| %>
+    <% work.languages.each do |language| %>
+    <% if language.text.include?("Python") %>
+      <div class="work__contents__tab-content__list">
+        <div class="work__contents__tab-content__list__img">
+          <img src="/assets/main.jpg"/>
+        </div>
+        <div class="work__contents__tab-content__list__details">
+          <div class="work__contents__tab-content__list__details__name">
+            <%= link_to work.title, "#" %>
           </div>
-          <div class="work__contents__works__work__details">
-            <div class="work__contents__works__work__details__name">
-              Portfolio1
-            </div>
-            <ul class="work__contents__works__work__details__lang">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Ruby</li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-  <!-- ======================================== -->
-      <ul class="content-work">
-        <li>
-          <div class="work__contents__works__work__img">
-          </div>
-          <div class="work__contents__works__work__details">
-            <div class="work__contents__works__work__details__name">
-              Portfolio3
-            </div>
-            <ul class="work__contents__works__work__details__lang">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Ruby</li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </li>
-
-    <li class='content3'>
-      <ul class="content-work">
-        <li>
-          <div class="work__contents__works__work__img">
-          </div>
-          <div class="work__contents__works__work__details">
-            <div class="work__contents__works__work__details__name">
-              Portfolio2
-            </div>
-            <ul class="work__contents__works__work__details__lang">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Ruby</li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-  <!-- ======================================== -->
-      <ul class="content-work">
-        <li>
-          <div class="work__contents__works__work__img">
-          </div>
-          <div class="work__contents__works__work__details">
-            <div class="work__contents__works__work__details__name">
-              Portfolio4
-            </div>
-            <ul class="work__contents__works__work__details__lang">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Ruby</li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-     
-
-    </li>
-  </ul>
+          <ul class="work__contents__tab-content__list__details__languages">
+            <li class = "work__contents__tab-content__list__details__languages__lang">
+                <%= language.text %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <% else %>
+      <div class="work__contents__tab-content__none"></div>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
+<!-- ======================================== -->
 </div>
-<div class='credit'>
+</div>
   
-</div>
 <footer>
   <div class="container">
   <ul class="navigation">

@@ -1,10 +1,10 @@
 $(function(){
-  $('.tab-content>li').hide();
-  $('.tab-content>li').first().slideDown();
-    $('.tab-buttons span').click(function(){
+  $('.work__contents__tab-contents>div').hide();
+  $('.work__contents__tab-contents>div').first().slideDown();
+    $('.work__contents__tabs__tab-buttons span').click(function(){
       var thisclass=$(this).attr('class');
       $('#lamp').removeClass().addClass('#lamp').addClass(thisclass);
-      $('.tab-content>li').each(function(){
+      $('.work__contents__tab-contents>div').each(function(){
         if($(this).hasClass(thisclass)){
           $(this).fadeIn(800);
         }
