@@ -33,7 +33,8 @@
       </div>
       <div class="work__contents__tab-content__list__details">
         <div class="work__contents__tab-content__list__details__name">
-          <%= link_to work.title, "#" %>
+          <%= link_to work.title, work_path(work.id) %>
+
         </div>
         <ul class="work__contents__tab-content__list__details__languages">
           <% work.languages.each do |language| %>

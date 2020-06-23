@@ -2,6 +2,8 @@
     def index
       @contacts = Contact.all
       @contact = Contact.new
+      @blogs = Post.all
+      @works = Work.all
 
     end
 

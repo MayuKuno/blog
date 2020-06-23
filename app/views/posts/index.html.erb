@@ -11,54 +11,112 @@
     </ul>
   </div>
 </header>
-<!-- ======================================== -->           
-<div class="admin__contents">
-  <div class="admin__contents__nav">
-    <p>Dashboard</p>
-    <div class="admin__contents__nav__content">
-      <div class="admin__contents__nav__content__user">
-       Logged in as<br><%= current_admin.name %>
-       <div>
-        <%= link_to "Log out", destroy_admin_session_path, method: :delete %>
-       </div>
-       </div>
-      <div class="admin__contents__nav__content__newarticle">
-        <%= link_to "Add article", new_post_path, class: "admin__contents__nav__content__newarticle__btn" %>
+<!-- ======================================== -->    
+<div class="post__contents">
+  <div class="post__contents__side">
+   
+    <div class="post__contents__side__top">
+      <p>Logged in as</p>
+      <div class="post__contents__side__top__name">  
+        <%= link_to current_admin.name, "#", class: "post__contents__side__top__name__link" %>
+      </div>
+      <div class="post__contents__side__top__logout">  
+        <%= link_to "Logout", destroy_admin_session_path, class: "post__contents__side__top__logout__link" , method: :delete %>
+      </div>
+      <div class="post__contents__side__top__edit">  
+        <%= link_to "Edit", "#", class: "post__contents__side__top__edit__link" %>
       </div>
     </div>
-  </div>
-  <div class="admin__contents__main">
-    <table>
-      <thead>
-          <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Title</th>
-              <th scope="col">Description</th>
-              <th scope="col">Created_at</th>
-              <th scope="col"></th>
 
-          </tr>
-      </thead>
-      <tbody>
-        <% @posts.each do |post| %>
-        <tr>
-          <td><%= post.id%></td>
-          <td><%= post.title%></td>
-          <td><%= post.description%></td>
-          <td><%= post.created_at.strftime '%Y-%m-%d'%></td>
-          <td>
-            <%= link_to "Preview", post_path(post.id), class: "postManage__preview" %>
-            <%= link_to "Edit", edit_post_path(post.id), class: "postManage__edit" %>
-            <%= link_to "Delete", post_path(post.id), method: :delete, class: "postManage__delete" %>
-          </td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>    
+    <div id="vertical_tab_nav" class="post__contents__side__bottom">
+          <ul>
+              <li><a href="/posts">BLOG Dashboard</a></li>
+              <li class="selected"><a href="/posts">WORK Dashboard</a></li>
+              <li><a href="/posts">Admin</a></li>
+          </ul>
+
+    </div>
   </div>
+
+  <section class="post__contents__content">
+    <article>
+      <div class="post__contents__content__dashboard">
+          <table>
+            <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Created_at</th>
+                  <th scope="col">
+                    <div class="post__contents__content__dashboard__new">
+                      <%= link_to "Add article", new_post_path, class: "post__contents__content__dashboard__new__link" %>
+                    </div>
+                  </th>
+                </tr>
+            </thead>
+            <tbody>
+              <% @posts.each do |post| %>
+              <tr>
+                <td><%= post.id%></td>
+                <td><%= post.title%></td>
+                <td class="description"><%= post.description%></td>
+                <td><%= post.created_at.strftime '%Y-%m-%d'%></td>
+                <td>
+                  <%= link_to "Preview", post_path(post.id), class: "postManage__preview" %>
+                  <%= link_to "Edit", edit_post_path(post.id), class: "postManage__edit" %>
+                  <%= link_to "Delete", post_path(post.id), method: :delete, class: "postManage__delete" %>
+                </td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>    
+      </div>
+    </article>
+
+    <article>
+      <div class="post__contents__content__dashboard">
+          <table>
+            <thead>
+                <tr>
+                  <th scope="col">Image</th>
+                  <th scope="col">ID</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">
+                    <div class="post__contents__content__dashboard__new">
+                      <%= link_to "Add Work", new_post_path, class: "post__contents__content__dashboard__new__link" %>
+                    </div>
+                  </th>
+                </tr>
+            </thead>
+            <tbody>
+              <% @works.each do |work| %>
+              <tr class="work">
+                <td class="image">
+                 <img src="<%= "#{work.URL}" %>">
+                </td>
+                <td><%= work.id%></td>
+                <td><%= work.title%></td>
+                <td><%= work.description%></td>
+                <td>
+                  <%= link_to "Preview", "#", class: "postManage__preview" %>
+                  <%= link_to "Edit", "#", class: "postManage__edit" %>
+                  <%= link_to "Delete", "#", method: :delete, class: "postManage__delete" %>
+                </td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>    
+      </div>
+    </article>
+
+    <article>
+        <h2>Admin</h2>
+    </article>       
+  </section>
 </div>
-
-
+<!-- ======================================== -->           
 <footer>
   <div class="container">
   <ul class="navigation">

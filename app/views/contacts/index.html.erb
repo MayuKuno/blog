@@ -25,62 +25,28 @@
 <!-- ====================work==================== -->
   <div class="contents__content" >
     <h2 class="contents__content__ttl">Works</h2>
-    <ul class="contents__content__workList">
-      <li>
-        <div class="contents__content__workList__list">
-          <div class="contents__content__workList__list__img">
-            <img src="/assets/main.jpg"/>
-          </div>
-          <div class="contents__content__workList__list__details">
-            <div class="contents__content__workList__list__details__name">
-              Portfolio
-            </div>
-          
-            <ul class="contents__content__workList__list__details__lang">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Ruby</li>
-            </ul>
-          </div>
+    <div class="contents__content__workList">
+    <% @works.first(3).each do |work| %>
+    <div class="contents__content__workList__list">
+      <div class="contents__content__workList__list__img">
+        <img src="/assets/main.jpg"/>
+      </div>
+      <div class="contents__content__workList__list__details">
+        <div class="contents__content__workList__list__details__name">
+          <%= link_to work.title %>
+
         </div>
-      </li>
-      <li>
-        <div class="contents__content__workList__list">
-          <div class="contents__content__workList__list__img">
-            <img src="/assets/main.jpg"/>
-          </div>
-          <div class="contents__content__workList__list__details">
-            <div class="contents__content__workList__list__details__name">
-              Tweetapp
-            </div>
-      
-            <ul class="contents__content__workList__list__details__lang">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Ruby</li>
-            </ul>
-          </div>
-        </div>
-      </li>
-            <li>
-        <div class="contents__content__workList__list">
-          <div class="contents__content__workList__list__img">
-            <img src="/assets/main.jpg"/>
-          </div>
-          <div class="contents__content__workList__list__details">
-            <div class="contents__content__workList__list__details__name">
-              Textapp
-            </div>
-      
-            <ul class="contents__content__workList__list__details__lang">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Ruby</li>
-            </ul>
-          </div>
-        </div>
-      </li>
-    </ul>
+        <ul class="work__contents__tab-content__list__details__languages">
+          <% work.languages.each do |language| %>
+          <li class = "work__contents__tab-content__list__details__languages__lang">
+               <%= language.text %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <% end %>
+    </div>
     <div class="contents__content__all">
       <%= link_to "View all works", works_path %>
     </div>
@@ -89,68 +55,39 @@
 <!-- ====================blog==================== -->
   <div class="contents__content">
     <h2 class="contents__content__ttl">Blogs</h2>
-    <ul class="contents__content__blogList">
-      <li>
-        <div class="contents__content__blogList__list">
-          <a href="#">
-            <img src="/assets/main.jpg"/>
-            <div class="contents__content__blogList__list__title">
-              <%= link_to "Blog's title 1", "#" %>
-            </div>
-            <div class="contents__content__blogList__list__comment">
-              blog's description blog's description blog's description blog's description blog's
-            </div>
+    <div class="contents__content__blogList">
+      <% @blogs.first(3).each do |blog| %>
+      <div class="contents__content__blogList__list">
+        <a href="#">
+          <img src="<%= "#{blog.image}" %>">
           </a>
-          <div class="contents__content__blogList__list__detail">
-          <a href="#" >more</a>
+          <div class="contents__content__blogList__list__title">
+            <%= link_to blog.title, blog_path(blog.id) %>
           </div>
-        </div>
-      </li>
-      <li>
-        <div class="contents__content__blogList__list">
-          <a href="#">
-            <img src="/assets/main.jpg"/>
-            <div class="contents__content__blogList__list__title">
-              <%= link_to "Blog's title 2", "#" %>
-            </div>
-            <div class="contents__content__blogList__list__comment">
-              blog's description blog's description blog's description blog's description blog's
-            </div>
-          </a>
-          <div class="contents__content__blogList__list__detail">
-          <a href="#" >more</a>
+          <% blog.categories.each do |category| %>
+          <li class = "contents__content__blogList__list__category">
+              <%= link_to category.text, blog_path(blog.id), class: "contents__content__blogList__list__title__category__link" %>
+          </li>
+          <% end %>
+          <div class="contents__content__blogList__list__time">
+            <%= blog.created_at.strftime '%Y-%m-%d' %>
           </div>
-        </div>
-      </li>
-      <li>
-        <div class="contents__content__blogList__list">
-          <a href="#">
-            <img src="/assets/main.jpg"/>
-            <div class="contents__content__blogList__list__title">
-              <%= link_to "Blog's title 3", "#" %>
-            </div>
-            <div class="contents__content__blogList__list__comment">
-              blog's description blog's description blog's description blog's description blog's
-            </div>
-          </a>
-          <div class="contents__content__blogList__list__detail">
-          <a href="#" >more</a>
+          <div class="contents__content__blogList__list__description">
+            <%= blog.description %>
           </div>
-        </div>
-      </li>
-    </ul>
-    <div class="contents__content__all">
-      <%= link_to "View all posts", blogs_path %>
-    </div>
 
+      </div>
+      <% end %>
+    </div>
+  <div class="contents__content__all">
+    <%= link_to "View all posts", blogs_path %>
   </div>
 
 <!-- ====================getintouch==================== -->
   <div class="contents__content">
     <h2 class="contents__content__ttl">Get in touch</h2>
     <div class="contents__content__form">
-
-            <div class="contact-form row">
+      <div class="contact-form row">
         <%= form_with(model: @contact, local: true) do |f| %>
           <div class="form-field col x-50">
             <%= f.text_field :name, class: 'input-text js-input'%>
@@ -171,16 +108,12 @@
           <div class="form-field col x-100 align-center">
             <%= f.submit 'Send', class: 'submit-btn' %>
           </div>
-          	
+  
             <% end %>
           </div>
    </div>
         
   </div>
-
-
-
-
 
 <!-- ====================form==================== -->
   <div id="getintouch" class="contents__content">
