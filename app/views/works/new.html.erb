@@ -13,13 +13,13 @@
 <!-- ======================================== -->           
 <div class="adminnew_contents">
   <div class="adminnew_contents__title">
-    Create new article
+    Create new work
   </div>
   <div class="adminnew_contents__form">
-  <%= form_with model: @post, class: :form, local: true do |form| %>
+  <%= form_with model: @work, class: :form, local: true do |form| %>
     <div class="adminnew_contents__form__item">Category</div>
     <div class="adminnew_contents__form__category">
-    <%= form.collection_check_boxes :category_ids, Category.all, :id, :text %>
+    <%= form.collection_check_boxes :language_ids, Language.all, :id, :text %>
     </div>
     <div class="adminnew_contents__form__images">
     <%= form.label :image, class: 'adminnew_contents__form__images__image' do %>
@@ -30,8 +30,8 @@
       <%= form.file_field :image, class: 'adminnew_contents__form__images__image__file' %>
     <% end %>
     <div class="adminnew_contents__form__images__show">
-      <% if @post.image.present? %>
-        <%= image_tag @post.image, id: :img_prev %>
+      <% if @work.image.present? %>
+        <%= image_tag @work.image, id: :img_prev %>
       <% else %>
         <%= image_tag "/assets/Insert.png", id: :img_prev %>
       <% end %>
@@ -39,9 +39,11 @@
     </div>
     <div class="adminnew_contents__form__item">Title</div>
     <%= form.text_field :title, class: :adminnew_contents__form__title %>
-    <div class="adminnew_contents__form__item">Description</div>
+    <div class="adminnew_contents__form__item">Production Period</div>
+    <%= form.text_field :title, class: :adminnew_contents__form__title %>
+    <div class="adminnew_contents__form__item">Concept</div>
     <%= form.text_area :description, class: :adminnew_contents__form__description %>
-    <div class="adminnew_contents__form__item">Content</div>
+    <div class="adminnew_contents__form__item">Description</div>
     <%= form.text_area :content, class: :adminnew_contents__form__content %>
     <%= form.submit 'Post it', class: :adminnew_contents__form__btn %>
   <% end %>

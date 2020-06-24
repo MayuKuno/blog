@@ -1,0 +1,75 @@
+<header>
+  <div class="container">
+    <div class="container__logo">
+      <a class="container__logo__content" href="/">NINEFS</a>
+    </div>
+    <ul class="navigation">
+      <li class="navigation__list-item "><a href="/about">About</a></li>
+      <li class="navigation__list-item work-nav"><a href="/works">WORK</a></li>
+      <li class="navigation__list-item "><a href="/blogs">BLOG</a></li>
+    </ul>
+  </div>
+</header>
+  <!-- ======================================== -->
+
+<div class="work__show__contents">
+
+  <div class="work__show__contents__top">
+    <div class="work__show__contents__top__title">
+      <%= @work.title %>
+    </div>
+    <div class="work__show__contents__top__image">
+     <a href="#">
+      <img src="<%= "#{@work.image}" %>">
+     </a>
+    </div>
+  </div>
+
+
+  <div class="work__show__contents__bottom">
+    <div class="work__show__contents__bottom__items">
+      <ul class="work__show__contents__bottom__items__item">
+           <li>
+            <div class="work__show__contents__bottom__items__item__list">コンセプト</div>
+            <div class="work__show__contents__bottom__items__item__description"><%= @work.concept %></div>
+           </li>
+           <li>
+            <div class="work__show__contents__bottom__items__item__list">概要</div>
+            <div class="work__show__contents__bottom__items__item__description"><%= @work.description %></div>
+           </li>
+           <li>
+            <div class="work__show__contents__bottom__items__item__list">スキル</div>
+            <div class="work__show__contents__bottom__items__item__description">
+            <% @work.languages.each do |language| %>
+              <%= language.text %>
+            <% end %>
+            </div>
+           </li>
+           <li>
+            <div class="work__show__contents__bottom__items__item__list">作成期間</div>
+            <div class="work__show__contents__bottom__items__item__description"><%= @work.period %></div>
+           </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <!-- ======================================== -->
+</div>
+</div>
+  
+<footer>
+  <div class="container">
+  <ul class="navigation">
+      <li class="navigation__list-item "><a href="/about">About</a></li>
+      <li class="navigation__list-item work-nav"><a href="/works">WORK</a></li>
+      <li class="navigation__list-item "><a href="/blogs">BLOG</a></li>
+    </ul>
+    <div class="container__logo">
+      <a class="container__logo__content" href="/">NINEFS</a>
+    </div>
+  </div>
+</footer>

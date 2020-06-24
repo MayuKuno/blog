@@ -29,7 +29,8 @@
     <% @works.each do |work| %>
     <div class="work__contents__tab-content__list">
       <div class="work__contents__tab-content__list__img">
-        <img src="/assets/main.jpg"/>
+        <img src="<%= "#{work.image}" %>">
+
       </div>
       <div class="work__contents__tab-content__list__details">
         <div class="work__contents__tab-content__list__details__name">
@@ -54,11 +55,13 @@
     <% if language.text.include?("Ruby") %>
       <div class="work__contents__tab-content__list">
         <div class="work__contents__tab-content__list__img">
-          <img src="/assets/main.jpg"/>
+          <a href="#">
+           <img src="<%= "#{work.image}" %>">
+            </a>
         </div>
         <div class="work__contents__tab-content__list__details">
           <div class="work__contents__tab-content__list__details__name">
-            <%= link_to work.title, "#" %>
+          <%= link_to work.title, work_path(work.id) %>
           </div>
           <ul class="work__contents__tab-content__list__details__languages">
             <li class = "work__contents__tab-content__list__details__languages__lang">
@@ -81,7 +84,8 @@
     <% if language.text.include?("Python") %>
       <div class="work__contents__tab-content__list">
         <div class="work__contents__tab-content__list__img">
-          <img src="/assets/main.jpg"/>
+           <img src="<%= "#{work.image}" %>">
+
         </div>
         <div class="work__contents__tab-content__list__details">
           <div class="work__contents__tab-content__list__details__name">

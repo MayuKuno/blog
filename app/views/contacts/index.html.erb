@@ -29,12 +29,12 @@
     <% @works.first(3).each do |work| %>
     <div class="contents__content__workList__list">
       <div class="contents__content__workList__list__img">
-        <img src="/assets/main.jpg"/>
+        <img src="<%= "#{work.URL}" %>">
       </div>
+      
       <div class="contents__content__workList__list__details">
         <div class="contents__content__workList__list__details__name">
-          <%= link_to work.title %>
-
+          <%= link_to work.title, work_path(work.id) %>
         </div>
         <ul class="work__contents__tab-content__list__details__languages">
           <% work.languages.each do |language| %>

@@ -32,7 +32,6 @@
           <ul>
               <li><a href="/posts">BLOG Dashboard</a></li>
               <li class="selected"><a href="/posts">WORK Dashboard</a></li>
-              <li><a href="/posts">Admin</a></li>
           </ul>
 
     </div>
@@ -40,7 +39,7 @@
 
   <section class="post__contents__content">
     <article>
-      <div class="post__contents__content__dashboard">
+      <div class="post__contents__content__dashboard__blog">
           <table>
             <thead>
                 <tr>
@@ -49,8 +48,9 @@
                   <th scope="col">Description</th>
                   <th scope="col">Created_at</th>
                   <th scope="col">
-                    <div class="post__contents__content__dashboard__new">
-                      <%= link_to "Add article", new_post_path, class: "post__contents__content__dashboard__new__link" %>
+                    <div class="post__contents__content__dashboard__blog__new">
+                      <i class="fas fa-edit post__contents__content__dashboard__blog__new__icon"></i>
+                      <%= link_to "Add article", new_post_path, class: "post__contents__content__dashboard__blog__new__link" %>
                     </div>
                   </th>
                 </tr>
@@ -72,20 +72,26 @@
             </tbody>
           </table>    
       </div>
+    <%= paginate(@posts) %>
+
     </article>
 
     <article>
-      <div class="post__contents__content__dashboard">
+      <div class="post__contents__content__dashboard__work">
           <table>
             <thead>
                 <tr>
-                  <th scope="col">Image</th>
                   <th scope="col">ID</th>
+                  <th scope="col">Image</th>
                   <th scope="col">Title</th>
                   <th scope="col">Description</th>
+                  <th scope="col">Concept</th>
+                  <th scope="col">Period</th>
                   <th scope="col">
-                    <div class="post__contents__content__dashboard__new">
-                      <%= link_to "Add Work", new_post_path, class: "post__contents__content__dashboard__new__link" %>
+                    <div class="post__contents__content__dashboard__work__new">
+                      <i class="fas fa-edit post__contents__content__dashboard__blog__new__icon"></i>
+
+                      <%= link_to "Add Work", new_work_path, class: "post__contents__content__dashboard__work__new__link" %>
                     </div>
                   </th>
                 </tr>
@@ -93,27 +99,30 @@
             <tbody>
               <% @works.each do |work| %>
               <tr class="work">
-                <td class="image">
-                 <img src="<%= "#{work.URL}" %>">
-                </td>
                 <td><%= work.id%></td>
+                <td class="image">
+                 <img src="<%= "#{work.image}" %>" width="100" height="auto">
+                </td>
                 <td><%= work.title%></td>
-                <td><%= work.description%></td>
+                <td class="description"><%= work.description %></td>
+                <td><%= work.concept%></td>
+                <td><%= work.period%></td>
+
                 <td>
-                  <%= link_to "Preview", "#", class: "postManage__preview" %>
-                  <%= link_to "Edit", "#", class: "postManage__edit" %>
-                  <%= link_to "Delete", "#", method: :delete, class: "postManage__delete" %>
+                  <%= link_to "Preview", work_path(work.id), class: "postManage__preview" %>
+                  <%= link_to "Edit", edit_work_path(work.id), class: "postManage__edit" %>
+                  <%= link_to "Delete", work_path(work.id), method: :delete, class: "postManage__delete" %>
                 </td>
               </tr>
               <% end %>
             </tbody>
           </table>    
       </div>
+      <%= paginate @works, :param_name => 'works' %>
+
     </article>
 
-    <article>
-        <h2>Admin</h2>
-    </article>       
+     
   </section>
 </div>
 <!-- ======================================== -->           

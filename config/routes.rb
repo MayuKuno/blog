@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: 'contacts#index'
   resources :contacts
   resources :about, only: :index
-  resources :works, only: [:index, :show]
+  resources :works
   resources :posts
   resources :blogs, only: [:index, :show]
  
