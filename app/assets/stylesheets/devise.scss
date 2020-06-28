@@ -1,0 +1,184 @@
+.devise__login__contents{
+  background-color: beige;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  margin: 100px 200px;
+  height: 500px;
+  text-align: center;
+  
+
+  &__title{
+    p{
+      padding: 50px 0; 
+      font-size: 40px;
+
+    }
+  }
+  &__content{
+    &__username{
+      margin: 20px;
+      input{
+        height: 50px;
+        width: 500px;
+      }
+    }
+    &__password{
+      input{
+        height: 50px;
+        width: 500px;
+      }
+    }
+    &__remember{
+      margin: 20px 0;
+      input{
+
+      }
+    }
+    &__login{
+      // margin: 10px 0;
+      input{
+        margin: 10px 0;
+        height: 30px;
+        width: 150px;
+      }
+    }
+     
+    
+  }
+}
+.registrations{
+    color: black;
+    height: 50px;
+    width: 500px;
+}
+.registrations:hover {
+  position: relative;
+  top: 1px;
+  left: 1px;
+  box-shadow: 0 0 0 rgba(0,0,0,0.2);
+}
+.forgot{
+  color: black;
+}
+.forgot:hover {
+  position: relative;
+  top: 1px;
+  left: 1px;
+  box-shadow: 0 0 0 rgba(0,0,0,0.2);
+}
+
+.options{
+  text-align: center;
+  display: flex;
+
+  margin: 40px auto;
+}
+.option{
+  height: 50px;
+  width: 500px;
+  
+}
+
+.devise__signup__contents{
+  background-color: beige;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  margin: 100px 200px;
+  height: 600px;
+  text-align: center;
+  
+
+  &__title{
+    p{
+      padding: 50px 0; 
+      font-size: 40px;
+
+    }
+  }
+  &__content{
+    &__name{
+      margin-bottom: 20px;
+      input{
+        height: 50px;
+        width: 500px;
+      }
+    }
+    &__email{
+      margin-bottom: 20px;
+
+      input{
+        height: 50px;
+        width: 500px;
+      }
+    }
+    &__password{
+      margin-bottom: 20px;
+
+      input{
+
+        height: 50px;
+        width: 500px;
+      }
+    }
+
+    &__signup{
+      margin-bottom: 20px;
+      input{
+        margin: 10px 0;
+        height: 30px;
+        width: 150px;
+      }
+    }
+     
+    
+  }
+}
+
+
+.devise__edit__contents{
+  background-color: beige;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  margin: 100px 200px;
+  height: 800px;
+  text-align: center;
+
+
+  &__title{
+    h2{
+      padding: 50px 0; 
+      font-size: 40px;
+
+    }
+  }
+  &__content{
+    &__name{
+      margin-bottom: 20px;
+      input{
+        height: 50px;
+        width: 500px;
+      }
+    }
+    &__email{
+      margin-bottom: 20px;
+      input{
+        height: 50px;
+        width: 500px;
+      }
+    }
+    &__password{
+      margin-bottom: 20px;
+      input{
+        height: 50px;
+        width: 500px;
+      }
+    }
+
+    &__update{
+      margin-bottom: 20px;
+      input{
+        margin: 10px 0;
+        height: 30px;
+        width: 150px;
+      }
+    }
+  }
+
+}

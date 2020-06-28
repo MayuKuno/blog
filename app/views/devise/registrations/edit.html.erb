@@ -1,43 +1,88 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+         
+ <header>
+  <div class="container">
+    <div class="container__logo">
+      <a class="container__logo__content" href="/">NINEFS</a>
+    </div>
+    <ul class="navigation">
+      <li class="navigation__list-item "><a href="/about">About</a></li>
+      <li class="navigation__list-item "><a href="/works">WORK</a></li>
+      <li class="navigation__list-item blog-nav"><a href="/vlogs">BLOG</a></li>
+    </ul>
   </div>
+</header>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+<!-- ======================================== -->  
+<div class="devise__edit__contents">
+  <div class="devise__edit__contents__title">
+    <h2>Edit Account</h2>
+  </div>
+<div class="devise__edit__contents__content">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+<div class="devise__edit__contents__content">
+    <div class="devise__edit__contents__content__name">
+        <%= f.label :Name %><br />
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder:"Name" %>
+    </div>
+
+    <div class="devise__edit__contents__content__email">
+      <%= f.label :Email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email" %>
+    </div>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <div class="devise__edit__contents__content__password">
+      <%= f.label :current_password %> <br/><i>(we need your current password to confirm your changes)</i><br />
+      <%= f.password_field :current_password, autocomplete: "current-password" %>
+    </div>
+
+    <div class="devise__edit__contents__content__password">
+      <%= f.label :password %><br/> <i>(leave blank if you don't want to change it)</i><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+      <% if @minimum_password_length %>
+        <br />
+        <em>*<%= @minimum_password_length %> characters minimum</em>
+      <% end %>
+    </div>
+
+  <div class="devise__edit__contents__content__password">
+    <%= f.label :password_confirmation %><br/>
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
 
-  <div class="actions">
+  <div class="devise__edit__contents__content__update">
     <%= f.submit "Update" %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+  <div class="options">
+    <div class="option">
+      <%= link_to "Delete my account?", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
+</div>
+<div class="option">
 <%= link_to "Back", :back %>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ======================================== -->           
+<footer>
+  <div class="container">
+  <ul class="navigation">
+      <li class="navigation__list-item "><a href="/about">About</a></li>
+      <li class="navigation__list-item "><a href="/works">WORK</a></li>
+      <li class="navigation__list-item blog-nav"><a href="/vlogs">BLOG</a></li>
+    </ul>
+    <div class="container__logo">
+      <a class="container__logo__content" href="/">NINEFS</a>
+    </div>
+  </div>
+</footer>

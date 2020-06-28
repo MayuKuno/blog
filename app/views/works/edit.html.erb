@@ -1,9 +1,64 @@
-<div>Admin管理画面 work編集ページ</div>
-<div class="content__title">
-  投稿の編集
+<header>
+  <div class="container">
+    <div class="container__logo">
+      <a class="container__logo__content" href="/">NINEFS</a>
+    </div>
+    <ul class="navigation">
+      <li class="navigation__list-item "><a href="/about">About</a></li>
+      <li class="navigation__list-item "><a href="/works">WORK</a></li>
+      <li class="navigation__list-item blog-nav"><a href="/vlogs">BLOG</a></li>
+    </ul>
+  </div>
+</header>
+<!-- ======================================== -->           
+<div class="adminnew_contents">
+  <div class="adminnew_contents__title">
+   Edit work
+  </div>
+  <div class="adminnew_contents__form">
+  <%= form_with model: @work, class: :form, local: true do |form| %>
+    <div class="adminnew_contents__form__item">Language</div>
+    <div class="adminnew_contents__form__category">
+    <%= form.collection_check_boxes :language_ids, Language.all, :id, :text %>
+    </div>
+    <div class="adminnew_contents__form__images">
+    <%= form.label :image, class: 'adminnew_contents__form__images__image' do %>
+      <div class="adminnew_contents__form__images__image__img">
+        <%= icon('fas', 'image') %>
+        Select image
+      </div>
+      <%= form.file_field :image, class: 'adminnew_contents__form__images__image__file' %>
+    <% end %>
+    <div class="adminnew_contents__form__images__show">
+      <% if @work.image.present? %>
+        <%= image_tag @work.image.url , id: :img_prev %>
+      <% else %>
+        <%= image_tag "/assets/Insert.png", id: :img_prev %>
+      <% end %>
+    </div>
+    </div>
+    <div class="adminnew_contents__form__item">Title</div>
+    <%= form.text_field :title, class: :adminnew_contents__form__title %>
+    <div class="adminnew_contents__form__item">Production Period</div>
+    <%= form.text_field :period, class: :adminnew_contents__form__title %>
+    <div class="adminnew_contents__form__item">Concept</div>
+    <%= form.text_area :concept, class: :adminnew_contents__form__description %>
+    <div class="adminnew_contents__form__item">Description</div>
+    <%= form.text_area :description, class: :adminnew_contents__form__content %>
+    <%= form.submit 'Edit', class: :adminnew_contents__form__btn %>
+  <% end %>
+  </div>
 </div>
-<%= form_with model: @post, class: :form, local: true do |form| %>
-  <%= form.text_field :title, placeholder: :タイトル, class: :form__title %>
-  <%= form.text_area :content, placeholder: :ブログ本文, class: :form__text %>
-  <%= form.submit '投稿する', class: :form__btn %>
-<% end %>
+<!-- ======================================== -->           
+<footer>
+  <div class="container">
+  <ul class="navigation">
+      <li class="navigation__list-item "><a href="/about">About</a></li>
+      <li class="navigation__list-item "><a href="/works">WORK</a></li>
+      <li class="navigation__list-item blog-nav"><a href="/vlogs">BLOG</a></li>
+    </ul>
+    <div class="container__logo">
+      <a class="container__logo__content" href="/">NINEFS</a>
+    </div>
+  </div>
+</footer>

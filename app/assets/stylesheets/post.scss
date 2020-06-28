@@ -322,6 +322,8 @@
 
  }
   &__delete{
+    margin-right: 20px;
+
     background-color: beige;
     color: black;
     padding: 10px;
@@ -336,6 +338,21 @@
     box-shadow: 0 0 2px rgba(0,0,0,0.2);
 
  }
+ &__dashboard{
+  background-color: beige;
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+&__dashboard:hover {
+  position: relative;
+  top: 1px;
+  left: 1px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+
+}
 }
 .adminnew_contents{
   // box-shadow: 4px 4px;
@@ -481,8 +498,30 @@
       top: 1px;
       left: 1px;
       box-shadow: 0 0 2px rgba(0,0,0,0.2);
-  
    }
+   &__back{
+    display: block;
+    width: 60%;
+    height: 40px;
+    margin: 20px auto;
+
+    // margin-right: 20px;
+    background-color: beige;
+    color: black;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+  }
+  &__back:hover {
+    position: relative;
+    top: 1px;
+    left: 1px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.2);
+
+ }
   }
 }
 
@@ -589,3 +628,19 @@
 //     </table>    
 //   </div>
 // </div>
+
+.posts{
+  &__paginate {
+    margin: 0 auto;
+    text-align: center;
+    a{
+      color: black;
+      text-decoration: none;
+    }
+    a:hover {
+      position: relative;
+      top: 1px;
+      left: 1px;
+    }
+  }
+}

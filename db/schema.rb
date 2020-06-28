@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_23_153711) do
+ActiveRecord::Schema.define(version: 2020_06_24_155300) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -55,15 +55,6 @@ ActiveRecord::Schema.define(version: 2020_06_23_153711) do
     t.index ["text"], name: "index_languages_on_text", unique: true
   end
 
-  create_table "post_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "post_id"
-    t.bigint "category_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_post_categories_on_category_id"
-    t.index ["post_id"], name: "index_post_categories_on_post_id"
-  end
-
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "title"
     t.text "content"
@@ -71,6 +62,26 @@ ActiveRecord::Schema.define(version: 2020_06_23_153711) do
     t.datetime "updated_at", null: false
     t.text "image"
     t.string "description"
+  end
+
+  create_table "vlog_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "vlog_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_vlog_categories_on_category_id"
+    t.index ["vlog_id"], name: "index_vlog_categories_on_vlog_id"
+  end
+
+  create_table "vlogs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "content", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image"
+    t.string "description"
+    t.index ["content"], name: "index_vlogs_on_content", unique: true
+    t.index ["title"], name: "index_vlogs_on_title", unique: true
   end
 
   create_table "work_languages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -88,15 +99,14 @@ ActiveRecord::Schema.define(version: 2020_06_23_153711) do
     t.string "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "concept"
-    t.string "period"
+    t.string "concept", default: "", null: false
+    t.string "period", default: "", null: false
     t.index ["description"], name: "index_works_on_description", unique: true
-    t.index ["image"], name: "index_works_on_image", unique: true
     t.index ["title"], name: "index_works_on_title", unique: true
   end
 
-  add_foreign_key "post_categories", "categories"
-  add_foreign_key "post_categories", "posts"
+  add_foreign_key "vlog_categories", "categories"
+  add_foreign_key "vlog_categories", "vlogs"
   add_foreign_key "work_languages", "languages"
   add_foreign_key "work_languages", "works"
 end

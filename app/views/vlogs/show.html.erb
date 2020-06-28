@@ -7,7 +7,7 @@
     <ul class="navigation">
       <li class="navigation__list-item "><a href="/about">About</a></li>
       <li class="navigation__list-item "><a href="/works">WORK</a></li>
-      <li class="navigation__list-item blog-nav"><a href="/blogs">BLOG</a></li>
+      <li class="navigation__list-item blog-nav"><a href="/vlogs">BLOG</a></li>
     </ul>
   </div>
 </header>
@@ -16,14 +16,14 @@
   <div class="details__contents__article">
     <div class="details__contents__article__titles">
       <div class="details__contents__article__titles__title">
-        <%= simple_format(@blog.title) %>
+        <%= simple_format(@vlog.title) %>
       </div>
       <div class="details__contents__article__titles__date">
         <i class="far fa-clock"></i>
-        <%= @blog.created_at.strftime '%Y-%m-%d %H:%M:%S' %>
+        <%= @vlog.created_at.strftime '%Y-%m-%d %H:%M:%S' %>
       </div>
       <ul>
-        <% @blog.categories.each do |category| %>
+        <% @vlog.categories.each do |category| %>
         <li class = "details__contents__article__titles__category">
             <%= link_to category.text, "#", class: "details__contents__article__titles__category__link" %>
         </li>
@@ -32,10 +32,17 @@
    
     </div>
     <div class="details__contents__article__content">
-      <%= simple_format(@blog.content) %>
+      <%= simple_format(@vlog.content) %>
     </div>
-    
-  </div>
+    </div>
+      <% if admin_signed_in? %>
+    <div class="details__contents__article__content__manage">
+      <%= link_to "Edit", edit_vlog_path(@vlog.id), class: "details__contents__article__content__manage__edit" %>
+      <%= link_to "Delete", vlog_path(@vlog.id), method: :delete, class: "details__contents__article__content__manage__delete" %>
+      <%= link_to "Dashboard", posts_path, class: "details__contents__article__content__manage__delete" %>
+
+    </div>
+  <% else %>
       <div class="blog__contents__bottom__side">
         <div class="blog__contents__bottom__side__profile">
           <div class="blog__contents__bottom__side__profile__title"> Profile</div>
@@ -58,7 +65,11 @@
               <li><a href="https://www.facebook.com/mayukuno1006/" class="blog__contents__bottom__side__profile__snsbtn__btn facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
               <li><a href="https://www.facebook.com/mayukuno1006/" class="blog__contents__bottom__side__profile__snsbtn__btn mail" target="_blank"><i class="far fa-envelope"></i></a></li>
             </ul>
+          <div class="blog__contents__bottom__side__profile__adminpage">
+        <%= link_to "Admin Login", new_admin_session_path %>
         </div>
+        </div>
+
         <div class="blog__contents__bottom__side__category">
           <div class="blog__contents__bottom__side__category__title"> Category</div>
           <ul class="blog__contents__bottom__side__category__list">
@@ -72,9 +83,9 @@
           </ul>
 
         </div>
-        <%= link_to "Admin Login", new_admin_session_path %>
 
       </div>
+<% end %>
  </div>
     <!-- footer -->
 <footer>
@@ -82,10 +93,11 @@
   <ul class="navigation">
       <li class="navigation__list-item "><a href="/about">About</a></li>
       <li class="navigation__list-item "><a href="/works">WORK</a></li>
-      <li class="navigation__list-item blog-nav"><a href="/blogs">BLOG</a></li>
+      <li class="navigation__list-item blog-nav"><a href="/vlogs">BLOG</a></li>
     </ul>
     <div class="container__logo">
       <a class="container__logo__content" href="/">NINEFS</a>
     </div>
   </div>
+
 </footer>

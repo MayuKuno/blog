@@ -6,7 +6,7 @@
     <ul class="navigation">
       <li class="navigation__list-item "><a href="/about">About</a></li>
       <li class="navigation__list-item "><a href="/works">WORK</a></li>
-      <li class="navigation__list-item blog-nav"><a href="/blogs">BLOG</a></li>
+      <li class="navigation__list-item blog-nav"><a href="/vlogs">BLOG</a></li>
     </ul>
   </div>
 </header>
@@ -17,33 +17,33 @@
     </div>
     <div class="blog__contents__bottom">
       <div class="blog__contents__bottom__articles">
-      <% @blogs.first(6).each do |blog| %>
+      <% @vlogs.each do |vlog| %>
         <div class="blog__contents__bottom__articles__list">
-          <a href="#">
-            <img src="<%= "#{blog.image}" %>">
-            </a>
-            <div class="blog__contents__bottom__articles__list__title">
-              <%= link_to blog.title, blog_path(blog.id) %>
-            </div>
-            <% blog.categories.each do |category| %>
-            <li class = "blog__contents__bottom__articles__list__category">
-                <%= link_to category.text, "#", class: "details__contents__article__titles__category__link" %>
-            </li>
-            <% end %>
-          </ul>
-            <div class="blog__contents__bottom__articles__list__time">
-              <%= blog.created_at.strftime '%Y-%m-%d' %>
-            </div>
-            <div class="blog__contents__bottom__articles__list__description">
-              <%= blog.description %>
-            </div>
-         
-          <div class="blog__contents__bottom__articles__list__detail">
-          <a href="#" >more</a>
+          <div class="blog__contents__bottom__articles__list__img">
+            <%= link_to vlog_path(vlog.id), target: "_blank" do %>
+              <img src="<%= "#{vlog.image}" %>"> 
+            <% end %> 
+          </div>
+          <div class="blog__contents__bottom__articles__list__title">
+            <%= link_to vlog.title, vlog_path(vlog.id) %>
+          </div>
+          <% vlog.categories.each do |category| %>
+          <li class = "blog__contents__bottom__articles__list__category">
+            <%= link_to category.text, category_path(category.id), class: "details__contents__article__titles__category__link" %>
+
+          </li>
+          <% end %>
+          <div class="blog__contents__bottom__articles__list__time">
+            <%= vlog.created_at.strftime '%Y-%m-%d' %>
+          </div>
+          <div class="blog__contents__bottom__articles__list__description">
+            <%= vlog.description %>
           </div>
         </div>
       <% end %>
-      </div>
+      <div class='vlogs__paginate'><%= paginate(@vlogs) %></div>
+    </div>
+
       <div class="blog__contents__bottom__side">
         <div class="blog__contents__bottom__side__profile">
           <div class="blog__contents__bottom__side__profile__title"> Profile</div>
@@ -71,17 +71,11 @@
 
         <div class="blog__contents__bottom__side__category">
           <div class="blog__contents__bottom__side__category__title"> Category</div>
-          <ul class="blog__contents__bottom__side__category__list">
-            <li class="blog__contents__bottom__side__category__lists__list">HTML</li>
-            <li class="blog__contents__bottom__side__category__lists__list">CSS</li>
-            <li class="blog__contents__bottom__side__category__lists__list">JQuery</li>
-            <li class="blog__contents__bottom__side__category__lists__list">Javascript</li>
-            <li class="blog__contents__bottom__side__category__lists__list">Ruby</li>
-            <li class="blog__contents__bottom__side__category__lists__list">Rails</li>
-
-          </ul>
-
-        </div>
+          <% @categories.each do |category| %>
+            <div class="blog__contents__bottom__side__category__lists__list">
+              <%= link_to category.text, category_path(category.id) %>
+            </div>
+          <% end %>
 
       </div>
     </div>
@@ -97,7 +91,7 @@
   <ul class="navigation">
       <li class="navigation__list-item "><a href="/about">About</a></li>
       <li class="navigation__list-item "><a href="/works">WORK</a></li>
-      <li class="navigation__list-item blog-nav"><a href="/blogs">BLOG</a></li>
+      <li class="navigation__list-item blog-nav"><a href="/vlogs">BLOG</a></li>
     </ul>
     <div class="container__logo">
       <a class="container__logo__content" href="/">NINEFS</a>

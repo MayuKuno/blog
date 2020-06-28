@@ -1,34 +1,61 @@
-<h2>Sign up</h2>
+         
+ <header>
+  <div class="container">
+    <div class="container__logo">
+      <a class="container__logo__content" href="/">NINEFS</a>
+    </div>
+    <ul class="navigation">
+      <li class="navigation__list-item "><a href="/about">About</a></li>
+      <li class="navigation__list-item "><a href="/works">WORK</a></li>
+      <li class="navigation__list-item blog-nav"><a href="/vlogs">BLOG</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ======================================== -->  
+<div class="devise__signup__contents">
+  <div class="devise__signup__contents__title">
+    <p>Sign up</p>
+  </div>
+<div class="devise__signup__contents__content">
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  <div class="devise__signup__contents__content__name">
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder:"Name" %>
   </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="devise__signup__contents__content__email">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+  <div class="devise__signup__contents__content__password">
+    <%= f.password_field :password, autocomplete: "new-password", placeholder:"Password (6 characters minimum)" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="devise__signup__contents__content__password">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Password confirmation" %>
   </div>
 
-  <div class="actions">
+  <div class="devise__signup__contents__content__signup">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+</div>
+<!-- ======================================== -->           
+<footer>
+  <div class="container">
+  <ul class="navigation">
+      <li class="navigation__list-item "><a href="/about">About</a></li>
+      <li class="navigation__list-item "><a href="/works">WORK</a></li>
+      <li class="navigation__list-item blog-nav"><a href="/vlogs">BLOG</a></li>
+    </ul>
+    <div class="container__logo">
+      <a class="container__logo__content" href="/">NINEFS</a>
+    </div>
+  </div>
+</footer>

@@ -7,7 +7,7 @@
     <ul class="navigation">
       <li class="navigation__list-item "><a href="/about">About</a></li>
       <li class="navigation__list-item "><a href="/works">WORK</a></li>
-      <li class="navigation__list-item blog-nav"><a href="/blogs">BLOG</a></li>
+      <li class="navigation__list-item blog-nav"><a href="/vlogs">BLOG</a></li>
     </ul>
   </div>
 </header>
@@ -24,7 +24,7 @@
         <%= link_to "Logout", destroy_admin_session_path, class: "post__contents__side__top__logout__link" , method: :delete %>
       </div>
       <div class="post__contents__side__top__edit">  
-        <%= link_to "Edit", "#", class: "post__contents__side__top__edit__link" %>
+        <%= link_to "Edit", edit_admin_registration_path, class: "post__contents__side__top__edit__link" %>
       </div>
     </div>
 
@@ -50,29 +50,29 @@
                   <th scope="col">
                     <div class="post__contents__content__dashboard__blog__new">
                       <i class="fas fa-edit post__contents__content__dashboard__blog__new__icon"></i>
-                      <%= link_to "Add article", new_post_path, class: "post__contents__content__dashboard__blog__new__link" %>
+                      <%= link_to "Add article", new_vlog_path, class: "post__contents__content__dashboard__blog__new__link" %>
                     </div>
                   </th>
                 </tr>
             </thead>
             <tbody>
-              <% @posts.each do |post| %>
+              <% @vlogs.each do |vlog| %>
               <tr>
-                <td><%= post.id%></td>
-                <td><%= post.title%></td>
-                <td class="description"><%= post.description%></td>
-                <td><%= post.created_at.strftime '%Y-%m-%d'%></td>
+                <td><%= vlog.id%></td>
+                <td><%= vlog.title%></td>
+                <td class="description"><%= vlog.description%></td>
+                <td><%= vlog.created_at.strftime '%Y-%m-%d'%></td>
                 <td>
-                  <%= link_to "Preview", post_path(post.id), class: "postManage__preview" %>
-                  <%= link_to "Edit", edit_post_path(post.id), class: "postManage__edit" %>
-                  <%= link_to "Delete", post_path(post.id), method: :delete, class: "postManage__delete" %>
+                  <%= link_to "Detail", vlog_path(vlog.id), class: "postManage__preview" %>
+                  <%= link_to "Edit", edit_vlog_path(vlog.id), class: "postManage__edit" %>
+                  <%= link_to "Delete", vlog_path(vlog.id), method: :delete, class: "postManage__delete" %>
                 </td>
               </tr>
               <% end %>
             </tbody>
           </table>    
       </div>
-    <%= paginate(@posts) %>
+      <div class='posts__paginate'><%= paginate(@vlogs) %></div>
 
     </article>
 
@@ -109,7 +109,7 @@
                 <td><%= work.period%></td>
 
                 <td>
-                  <%= link_to "Preview", work_path(work.id), class: "postManage__preview" %>
+                  <%= link_to "Detail", work_path(work.id), class: "postManage__preview" %>
                   <%= link_to "Edit", edit_work_path(work.id), class: "postManage__edit" %>
                   <%= link_to "Delete", work_path(work.id), method: :delete, class: "postManage__delete" %>
                 </td>
@@ -118,7 +118,6 @@
             </tbody>
           </table>    
       </div>
-      <%= paginate @works, :param_name => 'works' %>
 
     </article>
 
@@ -131,7 +130,7 @@
   <ul class="navigation">
       <li class="navigation__list-item "><a href="/about">About</a></li>
       <li class="navigation__list-item "><a href="/works">WORK</a></li>
-      <li class="navigation__list-item blog-nav"><a href="/blogs">BLOG</a></li>
+      <li class="navigation__list-item blog-nav"><a href="/vlogs">BLOG</a></li>
     </ul>
     <div class="container__logo">
       <a class="container__logo__content" href="/">NINEFS</a>

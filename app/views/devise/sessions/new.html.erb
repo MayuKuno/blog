@@ -1,26 +1,67 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+         
+ <header>
+  <div class="container">
+    <div class="container__logo">
+      <a class="container__logo__content" href="/">NINEFS</a>
+    </div>
+    <ul class="navigation">
+      <li class="navigation__list-item "><a href="/about">About</a></li>
+      <li class="navigation__list-item "><a href="/works">WORK</a></li>
+      <li class="navigation__list-item blog-nav"><a href="/vlogs">BLOG</a></li>
+    </ul>
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+</header>
+<!-- ======================================== -->  
+<div class="devise__login__contents">
+  <div class="devise__login__contents__title">
+    <p>Login</p>
   </div>
+  <div class="devise__login__contents__content">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="devise__login__contents__content__username">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email" %>
+    </div>
+    <div class="devise__login__contents__content__password">
+      <%= f.password_field :password, autocomplete: "current-password", placeholder:"Password" %>
+    </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <% if devise_mapping.rememberable? %>
+      <div class="devise__login__contents__content__remember">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+
+    <div class="devise__login__contents__content__login">
+      <%= f.submit "Log in"%>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  <div class="options">
+    <div class="option">
+      <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+        <%= link_to "Sign up?", new_registration_path(resource_name), class:"registrations" %><br />
+      <% end %>
+    </div>
+    <div class="option">
+      <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+        <%= link_to "Forgot your password?", new_password_path(resource_name),class:"forgot" %> <br />
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>
+</div>
 
-<%= render "devise/shared/links" %>
+
+<!-- ======================================== -->           
+<footer>
+  <div class="container">
+  <ul class="navigation">
+      <li class="navigation__list-item "><a href="/about">About</a></li>
+      <li class="navigation__list-item "><a href="/works">WORK</a></li>
+      <li class="navigation__list-item blog-nav"><a href="/vlogs">BLOG</a></li>
+    </ul>
+    <div class="container__logo">
+      <a class="container__logo__content" href="/">NINEFS</a>
+    </div>
+  </div>
+</footer>

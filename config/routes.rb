@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   resources :contacts
   resources :about, only: :index
   resources :works
-  resources :posts
-  resources :blogs, only: [:index, :show]
+  resources :categories, only: [:index, :show]
+  resources :posts, only: [:index, :show]
+  resources :vlogs
  
 
 end

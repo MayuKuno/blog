@@ -6,7 +6,7 @@
     <ul class="navigation">
       <li class="navigation__list-item "><a href="/about">About</a></li>
       <li class="navigation__list-item "><a href="/works">WORK</a></li>
-      <li class="navigation__list-item blog-nav"><a href="/blogs">BLOG</a></li>
+      <li class="navigation__list-item blog-nav"><a href="/vlogs">BLOG</a></li>
     </ul>
   </div>
 </header>
@@ -16,7 +16,7 @@
     Create new article
   </div>
   <div class="adminnew_contents__form">
-  <%= form_with model: @post, class: :form, local: true do |form| %>
+  <%= form_with model: @vlog, class: :form, local: true do |form| %>
     <div class="adminnew_contents__form__item">Category</div>
     <div class="adminnew_contents__form__category">
     <%= form.collection_check_boxes :category_ids, Category.all, :id, :text %>
@@ -30,8 +30,8 @@
       <%= form.file_field :image, class: 'adminnew_contents__form__images__image__file' %>
     <% end %>
     <div class="adminnew_contents__form__images__show">
-      <% if @post.image.present? %>
-        <%= image_tag @post.image, id: :img_prev %>
+      <% if @vlog.image.present? %>
+        <%= image_tag @vlog.image, id: :img_prev %>
       <% else %>
         <%= image_tag "/assets/Insert.png", id: :img_prev %>
       <% end %>
@@ -44,6 +44,8 @@
     <div class="adminnew_contents__form__item">Content</div>
     <%= form.text_area :content, class: :adminnew_contents__form__content %>
     <%= form.submit 'Post it', class: :adminnew_contents__form__btn %>
+    <%= link_to "Dashboard", posts_path, class: "adminnew_contents__form__back" %>
+
   <% end %>
   </div>
 </div>
@@ -53,7 +55,7 @@
   <ul class="navigation">
       <li class="navigation__list-item "><a href="/about">About</a></li>
       <li class="navigation__list-item "><a href="/works">WORK</a></li>
-      <li class="navigation__list-item blog-nav"><a href="/blogs">BLOG</a></li>
+      <li class="navigation__list-item blog-nav"><a href="/vlogs">BLOG</a></li>
     </ul>
     <div class="container__logo">
       <a class="container__logo__content" href="/">NINEFS</a>
