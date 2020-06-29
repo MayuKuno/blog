@@ -13,6 +13,8 @@ class VlogsController < ApplicationController
   end
   def show
     @vlog = Vlog.find(params[:id])
+    @categories = Category.all
+
   end
   def edit
     @vlog = Vlog.find(params[:id])

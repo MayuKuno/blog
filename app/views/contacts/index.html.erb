@@ -70,7 +70,7 @@
           </div>
           <% vlog.categories.each do |category| %>
           <li class = "contents__content__blogList__list__category">
-              <%= link_to category.text, vlog_path(vlog.id), class: "contents__content__blogList__list__title__category__link" %>
+              <%= link_to category.text, category_path(category.id), class: "contents__content__blogList__list__title__category__link" %>
           </li>
           <% end %>
           <div class="contents__content__blogList__list__time">
