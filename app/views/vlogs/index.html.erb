@@ -30,7 +30,6 @@
           <% vlog.categories.each do |category| %>
           <li class = "blog__contents__bottom__articles__list__category">
             <%= link_to category.text, category_path(category.id), class: "details__contents__article__titles__category__link" %>
-
           </li>
           <% end %>
           <div class="blog__contents__bottom__articles__list__time">
