@@ -55,15 +55,6 @@ ActiveRecord::Schema.define(version: 2020_06_24_155300) do
     t.index ["text"], name: "index_languages_on_text", unique: true
   end
 
-  create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "title"
-    t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text "image"
-    t.string "description"
-  end
-
   create_table "vlog_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "vlog_id"
     t.bigint "category_id"
@@ -96,12 +87,13 @@ ActiveRecord::Schema.define(version: 2020_06_24_155300) do
   create_table "works", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.string "description", null: false
-    t.string "image", null: false
+    t.string "image", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "concept", default: "", null: false
     t.string "period", default: "", null: false
     t.index ["description"], name: "index_works_on_description", unique: true
+    t.index ["image"], name: "index_works_on_image", unique: true
     t.index ["title"], name: "index_works_on_title", unique: true
   end
 
