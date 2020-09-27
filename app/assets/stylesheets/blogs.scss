@@ -150,6 +150,7 @@
         }
         &__photo{
           img{
+            object-fit:cover;
           margin-right: 68px;
           margin-left: 68px;
           margin-top:40px;
