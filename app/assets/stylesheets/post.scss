@@ -372,18 +372,23 @@
     width: 100%;
     background-color: #fffaf0;
     padding: 20px 0;
-
+    .fr-box{
+      width: 60%;
+      margin: 20px auto;
+    }
     &__item{
     margin: 0 auto;
     width: 60%;
     font-weight: bold;
+
     }
     &__title{
       display: block;
       width: 60%;
       height: 40px;
       margin: 20px auto;
-
+      border-radius: 10px;
+      border: none;
     }
     &__images{
       display: flex;
@@ -430,6 +435,9 @@
       width: 60%;
       height: 80px;
       margin: 20px auto;
+      border-radius: 10px;
+      border: none;
+
     }
     &__content{
       display: block;
