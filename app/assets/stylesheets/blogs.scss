@@ -1,6 +1,23 @@
 
 /* ========================  // 〜559pxの画面サイズにCSSを適応 ======================== */
 @media screen and (max-width: 559px){ 
+  .Git{
+    width: 100%;
+    height: 200px;
+    margin-bottom: 40px;
+    text-align: center;
+    a{
+      text-decoration: none;
+      color:#494c4e ;
+    }
+    img{
+      width: 100%;
+    }
+    &__github-link {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  }
   .blog-nav a{
     border-bottom:2px solid #f6ac00;
     opacity:1
@@ -512,6 +529,23 @@
 
 /* ========================  // 560px〜960pxの画面サイズにCSSを適応 ======================== */
 @media screen and (min-width: 560px) and ( max-width:960px){
+  .Git{
+    width: 100%;
+    height: 200px;
+    margin-bottom: 40px;
+    text-align: center;
+    a{
+      text-decoration: none;
+      color:#494c4e ;
+    }
+    img{
+      width: 100%;
+    }
+    &__github-link {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  }
   .blog-nav a{
     border-bottom:2px solid #f6ac00;
     opacity:1
@@ -1023,6 +1057,24 @@
 
 /* ========================  // 960px～の画面サイズにCSSを適応 ======================== */
 @media screen and (min-width: 960px) { 
+  .Git{
+    width: 100%;
+    height: 200px;
+    margin-bottom: 40px;
+    text-align: center;
+    a{
+      text-decoration: none;
+      color:#494c4e ;
+    }
+    img{
+      width: 100%;
+      margin-left: 30px;
+    }
+    &__github-link {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  }
   .blog-nav a{
     border-bottom:2px solid #f6ac00;
     opacity:1
