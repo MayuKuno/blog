@@ -377,6 +377,10 @@
 
 /* ========================  // 960px～の画面サイズにCSSを適応 ======================== */
 @media screen and (min-width: 960px) { 
+  .github-link {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
   * {
     box-sizing: border-box;
   }

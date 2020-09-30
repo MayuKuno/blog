@@ -1303,6 +1303,9 @@
             align-items: center;
             text-transform: uppercase;
             font-weight: bold;
+            img{
+              height: 600px;
+            }
           }
           &__lists{
             padding-top:20px;
