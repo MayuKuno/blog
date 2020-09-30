@@ -1054,7 +1054,7 @@
         flex-wrap: wrap;
         margin-right: 50px;
         justify-content: space-between;
-        margin-bottom: 100px;
+        margin-bottom: 50px;
         padding-right: 80px;
         padding-left: 80px;
         padding-bottom: 50px;
@@ -1303,9 +1303,7 @@
             align-items: center;
             text-transform: uppercase;
             font-weight: bold;
-            img{
-              height: 600px;
-            }
+
           }
           &__lists{
             padding-top:20px;
@@ -1330,7 +1328,7 @@
       }
     }
   }
-  
+
   
   // .blog__contents__categories{
   //   box-shadow: 0 1rem 3rem rgba(0,0,0,0.175) !important;
