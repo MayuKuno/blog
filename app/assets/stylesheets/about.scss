@@ -111,6 +111,20 @@
         background:#f3981d;
         color:#fff!important;
         }
+        .git{
+          border:solid 1px #24292e;
+          color:#24292e;	
+          font-size:28px;
+        }
+        .git:hover{
+        border:solid 1px #24292e;
+        background:#24292e;
+        color:#fff!important;
+        i{
+          color:#fff!important;
+  
+        }
+        }
         
       }
       &__bottom{
@@ -372,6 +386,20 @@
         border:solid 1px #f3981d;
         background:#f3981d;
         color:#fff!important;
+        }
+        .git{
+          border:solid 1px #24292e;
+          color:#24292e;	
+          font-size:28px;
+        }
+        .git:hover{
+        border:solid 1px #24292e;
+        background:#24292e;
+        color:#fff!important;
+        i{
+          color:#fff!important;
+  
+        }
         }
         
       }
@@ -639,11 +667,26 @@
       background:#f3981d;
       color:#fff!important;
       }
+
+      .git{
+        border:solid 1px #24292e;
+        color:#24292e;	
+        font-size:28px;
+      }
+      .git:hover{
+      border:solid 1px #24292e;
+      background:#24292e;
+      color:#fff!important;
+      i{
+        color:#fff!important;
+
+      }
+      }
       
     }
     &__bottom{
       margin-top: 10px;
-      margin-bottom: 60px;
+      margin-bottom: 150px;
       display: flex;
       height: 100%;
       &__experiences{
