@@ -33,7 +33,7 @@ class VlogsController < ApplicationController
 
   private
   def vlog_params
-    params.require(:vlog).permit(:title, :content, :image, :description, category_ids: [])
+    params.require(:vlog).permit(:title, :content, :image, :description,:tag_list, category_ids: [])
   end
   
 end

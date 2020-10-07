@@ -1,0 +1,52 @@
+    <header>
+      <div class="container custom-header">
+        <div class="container__logo">
+          <a class="container__logo__content" href="/">NINEFS</a>
+        </div>
+        <div id="nav-toggle">
+          <div>
+              <span class="toggle"></span>
+              <span class="toggle"></span>
+              <span class="toggle"></span>
+          </div>
+        </div>
+        <div id="gloval-nav">
+          <ul class="navigation">
+            <li class="navigation__list-item"><a href="/about">About</a></li>
+            <li class="navigation__list-item "><a href="/works">WORK</a></li>
+            <li class="navigation__list-item blog-nav"><a href="/vlogs">BLOG</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+<!-- ======================================== -->           
+
+<div class="adminnew_contents">
+  <div class="adminnew_contents__title">
+    Add category
+  </div>
+  <div class="adminnew_contents__form">
+  <%= form_with model: @category, class: :form, local: true do |form| %>
+    <div class="adminnew_contents__form__item">Category</div>
+    <%= form.text_field :text, class: :adminnew_contents__form__title %>
+    <%= text_field_tag :tag_list, @category.tag_list.join(","), class: "form-control", :data=>{:role=>"tagsinput"}%>
+
+    <%= form.submit 'Add category', class: :adminnew_contents__form__btn %>
+    <%= link_to "Dashboard", posts_path, class: "adminnew_contents__form__back" %>
+
+  <% end %>
+  </div>
+</div>
+    <!-- ======================================== -->           
+<footer>
+  <div class="container">
+  <ul class="navigation">
+      <li class="navigation__list-item "><a href="/about">About</a></li>
+      <li class="navigation__list-item "><a href="/works">WORK</a></li>
+      <li class="navigation__list-item blog-nav"><a href="/vlogs">BLOG</a></li>
+    </ul>
+    <div class="container__logo">
+      <a class="container__logo__content" href="/">NINEFS</a>
+    </div>
+  </div>
+</footer>

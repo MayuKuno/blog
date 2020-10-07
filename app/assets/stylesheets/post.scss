@@ -131,9 +131,9 @@
       &__blog{
         &__new{
           background-color: beige;
-          height: 40px;
+          // height: 20px;
           width: 200px;
-          line-height: 40px;
+          // line-height: 20px;
           padding: 0 20px;
           margin: 0 auto;
           box-shadow: 0 2px 4px rgba(0,0,0,0.3);
@@ -143,12 +143,16 @@
               text-decoration: none;
           }
           &__icon{
-            padding-top: 10px;
+            // padding-top: 10px;
             font-size: 18px;
             color: black;
             margin-right: 10px;
             
           }
+        }
+        &__new:first-child{
+          margin-bottom: 10px;
+
         }
         &__new:hover {
           position: relative;

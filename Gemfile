@@ -84,7 +84,7 @@ gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 
 gem 'wysiwyg-rails'
-
+gem 'acts-as-taggable-on', '~> 6.0'
 
 
 # 以下全てをGemfile下部にコピー
