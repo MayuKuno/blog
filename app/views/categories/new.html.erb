@@ -29,7 +29,6 @@
   <%= form_with model: @category, class: :form, local: true do |form| %>
     <div class="adminnew_contents__form__item">Category</div>
     <%= form.text_field :text, class: :adminnew_contents__form__title %>
-    <%= text_field_tag :tag_list, @category.tag_list.join(","), class: "form-control", :data=>{:role=>"tagsinput"}%>
 
     <%= form.submit 'Add category', class: :adminnew_contents__form__btn %>
     <%= link_to "Dashboard", posts_path, class: "adminnew_contents__form__back" %>
