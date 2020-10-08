@@ -88,6 +88,7 @@ gem 'wysiwyg-rails'
 # 以下全てをGemfile下部にコピー
 group :production do
   gem 'unicorn'
-  gem 'pg'
+
+gem 'pg', '~> 0.19.0'
 
 end
