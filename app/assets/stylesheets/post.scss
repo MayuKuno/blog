@@ -384,6 +384,21 @@
     margin: 0 auto;
     width: 60%;
     font-weight: bold;
+    &__category{
+      margin: 30px 0px;
+      position: relative;
+      // display: flex;
+      &__left{
+        margin-left: 80px;
+        margin-bottom: 10px;
+
+        a{
+          color: #494c4e;
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
 
     }
     &__title{
