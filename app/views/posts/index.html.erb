@@ -47,6 +47,24 @@
 
   <section class="post__contents__content">
     <article>
+      <div class="post__contents__content__dashboard__blogPhone">
+        <div class="post__contents__content__dashboard__blogPhone__new">
+          <%= link_to "Add Article", new_vlog_path %>
+          <%= link_to "Add Category", new_category_path %>
+        </div>
+        <% @vlogs.each do |vlog| %>
+           <div class="post__contents__content__dashboard__blogPhone__img">
+            <%= link_to vlog_path(vlog.id) do %>
+              <img src="<%= "#{vlog.image}" %>"> 
+            <% end %> 
+            </div>
+          <div class="post__contents__content__dashboard__blogPhone__title">
+            <%= link_to vlog_path(vlog.id) do %>
+             <%= vlog.title %> 
+            <% end %> 
+            </div>
+          <% end %>
+          </div>
       <div class="post__contents__content__dashboard__blog">
           <table>
             <thead>
@@ -88,6 +106,27 @@
     </article>
 
     <article>
+      <div class="post__contents__content__dashboard__blogPhone">
+       <div class="post__contents__content__dashboard__blogPhone__new">
+          <%= link_to "Add Work", new_work_path %>
+          <%= link_to "Add Language", new_language_path%>
+        </div>
+        <% @works.each do |work| %>
+           <div class="post__contents__content__dashboard__blogPhone__img">
+            <%= link_to work_path(work.id) do %>
+              <img src="<%= "#{work.image}" %>"> 
+            <% end %> 
+            </div>
+          <div class="post__contents__content__dashboard__blogPhone__title">
+            <%= link_to work_path(work.id) do %>
+             <%= work.title %> 
+            <% end %> 
+            </div>
+          <% end %>
+      
+      
+      </div>
+
       <div class="post__contents__content__dashboard__work">
           <table>
             <thead>
@@ -96,8 +135,7 @@
                   <th scope="col">Image</th>
                   <th scope="col">Title</th>
                   <th scope="col">Description</th>
-                  <th scope="col">Concept</th>
-                  <th scope="col">Period</th>
+
                   <th scope="col">
                     <div class="post__contents__content__dashboard__blog__new">
                       <i class="fas fa-edit post__contents__content__dashboard__blog__new__icon"></i>
@@ -118,8 +156,7 @@
                 </td>
                 <td><%= work.title%></td>
                 <td class="description"><%= work.description %></td>
-                <td><%= work.concept%></td>
-                <td><%= work.period%></td>
+
 
                 <td>
                   <%= link_to "Detail", work_path(work.id), class: "postManage__preview" %>
