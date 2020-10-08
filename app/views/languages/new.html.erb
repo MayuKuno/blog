@@ -1,0 +1,65 @@
+    <header>
+      <div class="container custom-header">
+        <div class="container__logo">
+          <a class="container__logo__content" href="/">NINEFS</a>
+        </div>
+        <div id="nav-toggle">
+          <div>
+              <span class="toggle"></span>
+              <span class="toggle"></span>
+              <span class="toggle"></span>
+          </div>
+        </div>
+        <div id="gloval-nav">
+          <ul class="navigation">
+            <li class="navigation__list-item"><a href="/about">About</a></li>
+            <li class="navigation__list-item "><a href="/works">WORK</a></li>
+            <li class="navigation__list-item blog-nav"><a href="/vlogs">BLOG</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+<!-- ======================================== -->           
+
+<div class="adminnew_contents">
+  <div class="adminnew_contents__title">
+    Add Language
+  </div>
+  <div class="adminnew_contents__form">
+    <div class="adminnew_contents__form__item">
+    Language Lists
+    <div class="adminnew_contents__form__item__category">
+        <% @languages.each do |language| %>
+        <div class="adminnew_contents__form__item__category__left">
+          <%= language.text%>
+          <%= link_to "Delete", language_path(language.id), method: :delete %>
+        </div>
+     
+    <% end %>
+      </div>
+     </div>
+
+
+  <%= form_with model: @language, class: :form, local: true do |form| %>
+    <div class="adminnew_contents__form__item">Language</div>
+    <%= form.text_field :text, class: :adminnew_contents__form__title %>
+
+    <%= form.submit 'Add language', class: :adminnew_contents__form__btn %>
+    <%= link_to "Dashboard", posts_path, class: "adminnew_contents__form__back" %>
+
+  <% end %>
+  </div>
+</div>
+    <!-- ======================================== -->           
+<footer>
+  <div class="container">
+  <ul class="navigation">
+      <li class="navigation__list-item "><a href="/about">About</a></li>
+      <li class="navigation__list-item "><a href="/works">WORK</a></li>
+      <li class="navigation__list-item blog-nav"><a href="/vlogs">BLOG</a></li>
+    </ul>
+    <div class="container__logo">
+      <a class="container__logo__content" href="/">NINEFS</a>
+    </div>
+  </div>
+</footer>

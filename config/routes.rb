@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :about, only: :index
   resources :works
   resources :categories
+  resources :languages
+
   resources :posts, only: [:index, :show]
   resources :vlogs
  
