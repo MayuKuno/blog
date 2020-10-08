@@ -23,9 +23,19 @@
 <div class="details__contents">
   <div class="details__contents__article">
     <div class="details__contents__article__titles">
+
       <div class="details__contents__article__titles__title">
         <%= simple_format(@vlog.title) %>
+
       </div>
+                <% if admin_signed_in? %>
+          <ul class="details__contents__article__titles__manage">
+            <li><%= link_to "Edit", edit_vlog_path(@vlog.id) %></li>
+           <li> <%= link_to "Delete", vlog_path(@vlog.id), method: :delete %></li>
+           <li> <%= link_to "Dashboard", posts_path %></li>
+          </ul>
+        <% else %>
+        <%end%>
       <div class="details__contents__article__titles__date">
         <i class="far fa-clock"></i>
         <%= @vlog.created_at.strftime '%Y-%m-%d %H:%M:%S' %>
@@ -45,22 +55,21 @@
 
     </div>
       <% if admin_signed_in? %>
-    <div class="details__contents__article__content__manage">
-      <%= link_to "Edit", edit_vlog_path(@vlog.id), class: "details__contents__article__content__manage__edit" %>
-      <%= link_to "Delete", vlog_path(@vlog.id), method: :delete, class: "details__contents__article__content__manage__delete" %>
-      <%= link_to "Dashboard", posts_path, class: "details__contents__article__content__manage__delete" %>
 
-    </div>
   <% else %>
-      <div class="blog__contents__bottom__side">
+<div class="blog__contents__bottom__side">
         <div class="blog__contents__bottom__side__profile">
           <div class="blog__contents__bottom__side__profile__title"> Profile</div>
+            <div class="blog__contents__bottom__side__profile__title__display">
+            <div class="blog__contents__bottom__side__profile__title__display__left">
             <div class="blog__contents__bottom__side__profile__photo">
               <img src="/assets/self.jpg" alt="Mayu Kuno" />
             </div>
             <div class="blog__contents__bottom__side__profile__name">
                 <h1>Mayu Kuno</h1>
             </div>
+            </div>
+            <div class="blog__contents__bottom__side__profile__title__display__right" >
             <div class="blog__contents__bottom__side__profile__description">
                 <p>
                 エンジニアになるためプログラミングを勉強しています。<br>
@@ -68,21 +77,22 @@
                 近い未来にカナダ移住をするために情報収集しています。
                 </p>
             </div>
+            
             <ul class="blog__contents__bottom__side__profile__snsbtn">
               <li><a href="https://twitter.com/CoderNinefs" class="blog__contents__bottom__side__profile__snsbtn__btn twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="https://www.instagram.com/mayu_k06/?hl=ja" class="blog__contents__bottom__side__profile__snsbtn__btn instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="https://www.instagram.com/coderninefs/?hl=ja" class="blog__contents__bottom__side__profile__snsbtn__btn instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
               <li><a href="https://www.facebook.com/mayukuno1006/" class="blog__contents__bottom__side__profile__snsbtn__btn facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="https://www.facebook.com/mayukuno1006/" class="blog__contents__bottom__side__profile__snsbtn__btn mail" target="_blank"><i class="far fa-envelope"></i></a></li>
+              <li><a href="mailto:ninefs1006@gmail.com?subject=問い合わせ&amp;body=ご記入ください" class="blog__contents__bottom__side__profile__snsbtn__btn mail" target="_blank"><i class="far fa-envelope"></i></a></li>
             </ul>
-          <div class="blog__contents__bottom__side__profile__adminpage">
-        <%= link_to "Admin Login", new_admin_session_path %>
-        </div>
+            <div class="blog__contents__bottom__side__profile__adminpage"><%= link_to "Admin Login", new_admin_session_path %></div>
+            </div>
+            </div>
         </div>
 
-        <div class="blog__contents__bottom__side__category">
-          <div class="blog__contents__bottom__side__category__title"> Category</div>
+        <div class="details__contents__side__category">
+          <div class="details__contents__side__category__title"> Category</div>
           <% @categories.each do |category| %>
-            <div class="category__contents__bottom__side__category__lists__list">
+            <div class="details__contents__side__category__lists__list">
               <%= link_to category.text, category_path(category.id) %>
             </div>
           <% end %>

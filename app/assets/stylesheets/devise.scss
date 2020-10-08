@@ -1,7 +1,7 @@
 .devise__login__contents{
   background-color: beige;
   box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  margin: 100px 200px;
+  margin: 100px 0px;
   height: 500px;
   text-align: center;
   
@@ -18,13 +18,15 @@
       margin: 20px;
       input{
         height: 50px;
-        width: 500px;
+        width: 90%;
       }
     }
     &__password{
+      margin: 20px;
+
       input{
         height: 50px;
-        width: 500px;
+        width: 90%;
       }
     }
     &__remember{
@@ -81,7 +83,7 @@
 .devise__signup__contents{
   background-color: beige;
   box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  margin: 100px 200px;
+  margin: 100px 0px;
   height: 600px;
   text-align: center;
   
@@ -98,7 +100,7 @@
       margin-bottom: 20px;
       input{
         height: 50px;
-        width: 500px;
+        width: 90%;
       }
     }
     &__email{
@@ -106,7 +108,7 @@
 
       input{
         height: 50px;
-        width: 500px;
+        width:90%;
       }
     }
     &__password{
@@ -115,7 +117,7 @@
       input{
 
         height: 50px;
-        width: 500px;
+        width: 90%;
       }
     }
 
@@ -136,7 +138,7 @@
 .devise__edit__contents{
   background-color: beige;
   box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  margin: 100px 200px;
+  margin: 100px 0px;
   height: 800px;
   text-align: center;
 
@@ -153,21 +155,21 @@
       margin-bottom: 20px;
       input{
         height: 50px;
-        width: 500px;
+        width: 90%;
       }
     }
     &__email{
       margin-bottom: 20px;
       input{
         height: 50px;
-        width: 500px;
+        width: 90%;
       }
     }
     &__password{
       margin-bottom: 20px;
       input{
         height: 50px;
-        width: 500px;
+        width: 90%;
       }
     }
 

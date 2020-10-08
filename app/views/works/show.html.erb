@@ -37,28 +37,47 @@
 
   <div class="work__show__contents__bottom">
     <div class="work__show__contents__bottom__items">
-      <ul class="work__show__contents__bottom__items__item">
-           <li>
-            <div class="work__show__contents__bottom__items__item__list">コンセプト</div>
-            <div class="work__show__contents__bottom__items__item__description"><%= @work.concept %></div>
-           </li>
-           <li>
-            <div class="work__show__contents__bottom__items__item__list">概要</div>
-            <div class="work__show__contents__bottom__items__item__description"><%= @work.description %></div>
-           </li>
-           <li>
-            <div class="work__show__contents__bottom__items__item__list">スキル</div>
-            <div class="work__show__contents__bottom__items__item__description">
-            <% @work.languages.each do |language| %>
-              <%= language.text %>
-            <% end %>
-            </div>
-           </li>
-           <li>
-            <div class="work__show__contents__bottom__items__item__list">作成期間</div>
-            <div class="work__show__contents__bottom__items__item__description"><%= @work.period %></div>
-           </li>
-      </ul>
+      <div class="work__show__contents__bottom__items__overview">
+        <div class="work__show__contents__bottom__items__overview__left">
+        OVERVIEW
+        </div>
+        <div class="work__show__contents__bottom__items__overview__right">
+        <%= @work.description%>
+        <div class="work__show__contents__bottom__items__overview__right__website">
+        <%= link_to "サイトへ", posts_path %>
+        </div>
+        <div class="work__show__contents__bottom__items__overview__right__readme">
+        <%= link_to "READMEへ", posts_path %>
+        </div>
+        </div>
+      </div>
+      <div class="work__show__contents__bottom__items__concept">
+        <div class="work__show__contents__bottom__items__concept__left">
+         Concept
+        </div>
+        <div class="work__show__contents__bottom__items__concept__right">
+         <%= @work.concept%>
+        </div>
+      </div>
+      <div class="work__show__contents__bottom__items__skills">
+        <div class="work__show__contents__bottom__items__skills__left">
+         環境
+        </div>
+        <div class="work__show__contents__bottom__items__skills__right">
+        <% @work.languages.each do |language|%>
+        <%= language.text%>
+        <% end%>
+        </div>
+      </div>
+      <div class="work__show__contents__bottom__items__period">
+        <div class="work__show__contents__bottom__items__period__left">
+          作成期間
+        </div>
+        <div class="work__show__contents__bottom__items__period__right">
+        <%= @work.period%>
+        </div>
+      </div>
+
     </div>
   </div>
     <% if admin_signed_in? %>

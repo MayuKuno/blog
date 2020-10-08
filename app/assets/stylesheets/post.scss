@@ -202,7 +202,7 @@
   
    }
     &__edit{
-      // margin-right: 20px;
+      margin-right: 20px;
       background-color: beige;
       color: black;
       padding: 2px;
@@ -218,7 +218,7 @@
   
    }
     &__delete{
-      // margin-right: 20px;
+      margin-right: 20px;
   
       background-color: beige;
       color: black;
@@ -302,7 +302,7 @@
         border: none;
       }
       &__images{
-        display: flex;
+        // display: flex;
         margin: auto;
         width: 60%;
         margin-top: 60px;
@@ -312,8 +312,7 @@
           height: 40px;
           margin: 80px auto;
           &__img{
-            width: 200px; ;
-            margin-right: 20px;
+            // margin-right: 20px;
             background-color: beige;
             color: black;
             padding: 10px;
@@ -333,11 +332,11 @@
           }
         }
         &__show{
-          width: 500px;
-          height: 200px;
+          // width: 80%;
+          text-align: center;
           #img_prev{
-            width: auto;
-            height: 180px;
+            width: 80%;
+            // height: 180px;
           }
         }
       }
@@ -359,7 +358,7 @@
       &__category{
         display: block;
         width: 60%;
-        height: 40px;
+        // height: 40px;
         margin: 20px auto;
         padding-top: 20px;
       }
@@ -780,7 +779,7 @@
   
    }
     &__edit{
-      // margin-right: 20px;
+      margin-right: 20px;
       background-color: beige;
       color: black;
       padding: 2px;
@@ -796,7 +795,7 @@
   
    }
     &__delete{
-      // margin-right: 20px;
+      margin-right: 20px;
   
       background-color: beige;
       color: black;
@@ -880,7 +879,7 @@
         border: none;
       }
       &__images{
-        display: flex;
+        // display: flex;
         margin: auto;
         width: 60%;
         margin-top: 60px;
@@ -890,8 +889,7 @@
           height: 40px;
           margin: 80px auto;
           &__img{
-            width: 200px; ;
-            margin-right: 20px;
+            // margin-right: 20px;
             background-color: beige;
             color: black;
             padding: 10px;
@@ -911,11 +909,11 @@
           }
         }
         &__show{
-          width: 500px;
-          height: 200px;
+          // width: 80%;
+          text-align: center;
           #img_prev{
-            width: auto;
-            height: 180px;
+            width: 80%;
+            // height: 180px;
           }
         }
       }
