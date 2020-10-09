@@ -49,13 +49,14 @@
     </div>
     <div class="adminnew_contents__form__item">Title</div>
     <%= form.text_field :title, class: :adminnew_contents__form__title %>
-    <div class="adminnew_contents__form__item">Production Period</div>
-    <%= form.text_field :period, class: :adminnew_contents__form__title %>
-    <div class="adminnew_contents__form__item">Concept</div>
-    <%= form.text_area :concept, class: :adminnew_contents__form__description %>
-    <div class="adminnew_contents__form__item">Description</div>
+    <div class="adminnew_contents__form__item">Overview</div>
     <%= form.text_area :description, class: :adminnew_contents__form__content %>
-    <%= form.submit 'Edit', class: :adminnew_contents__form__btn %>
+    <div class="adminnew_contents__form__item">制作の目的</div>
+    <%= form.text_area :concept, class: :adminnew_contents__form__description %>
+    <div class="adminnew_contents__form__item">作成期間</div>
+    <%= form.text_field :period, class: :adminnew_contents__form__title %>
+
+    <%= form.submit 'Post it', class: :adminnew_contents__form__btn %>
   <% end %>
   </div>
 </div>

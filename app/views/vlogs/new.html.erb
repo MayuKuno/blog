@@ -51,10 +51,8 @@
     <div class="adminnew_contents__form__item">Description</div>
     <%= form.text_area :description, class: :adminnew_contents__form__description %>
     <div class="adminnew_contents__form__item">Content</div>
-    <%= form.text_area :content, class: :adminnew_contents__form__content, id: :myEditor %>
-    <script>
-      new FroalaEditor('#myEditor', {toolbarInline: false})
-    </script>
+    <%= form.text_area :content, class: :adminnew_contents__form__content%>
+
 
     <%= form.submit 'Post it', class: :adminnew_contents__form__btn %>
     <%= link_to "Dashboard", posts_path, class: "adminnew_contents__form__back" %>
