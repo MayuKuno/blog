@@ -1,5 +1,4 @@
-
-    <header>
+   <header>
       <div class="container custom-header">
         <div class="container__logo">
           <a class="container__logo__content" href="/">NINEFS</a>
@@ -28,7 +27,7 @@
       <%= @work.title %>
     </div>
     <div class="work__show__contents__top__image">
-     <a href="#">
+     <a href="<%= @work.website %>" target="_blank">
       <img src="<%= "#{@work.image}" %>">
      </a>
     </div>
@@ -44,10 +43,10 @@
         <div class="work__show__contents__bottom__items__overview__right">
         <%= @work.description%>
         <div class="work__show__contents__bottom__items__overview__right__website">
-        <%= link_to "サイトへ", posts_path %>
+         <a href="<%= @work.readme %>" target="_blank">READMEへ</a>
         </div>
         <div class="work__show__contents__bottom__items__overview__right__readme">
-        <%= link_to "READMEへ", posts_path %>
+         <a href="<%= @work.website %>" target="_blank">サイトへ</a>
         </div>
         </div>
       </div>
@@ -113,4 +112,3 @@
     </div>
   </div>
 </footer>
-

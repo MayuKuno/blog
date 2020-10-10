@@ -55,6 +55,10 @@
     <%= form.text_area :concept, class: :adminnew_contents__form__description %>
     <div class="adminnew_contents__form__item">作成期間</div>
     <%= form.text_field :period, class: :adminnew_contents__form__title %>
+    <div class="adminnew_contents__form__item">README URL</div>
+    <%= form.text_field :readme, class: :adminnew_contents__form__title %>
+    <div class="adminnew_contents__form__item">WEBSITE URL</div>
+    <%= form.text_field :website, class: :adminnew_contents__form__title %>
 
     <%= form.submit 'Post it', class: :adminnew_contents__form__btn %>
   <% end %>

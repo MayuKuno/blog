@@ -39,7 +39,7 @@
     <% @works.each do |work| %>
     <div class="work__contents__tab-content__list">
       <div class="work__contents__tab-content__list__img">
-         <%= link_to work_path(work.id), target: "_blank" do %>
+         <%= link_to work_path(work.id) do %>
           <img src="<%= "#{work.image}" %>"> 
          <% end %> 
       </div>
@@ -67,18 +67,21 @@
     <% if language.text.include?("Ruby") %>
       <div class="work__contents__tab-content__list">
         <div class="work__contents__tab-content__list__img">
-          <a href="#">
-           <img src="<%= "#{work.image}" %>">
-            </a>
+        <%= link_to work_path(work.id) do %>
+          <img src="<%= "#{work.image}" %>"> 
+         <% end %> 
         </div>
         <div class="work__contents__tab-content__list__details">
           <div class="work__contents__tab-content__list__details__name">
           <%= link_to work.title, work_path(work.id) %>
           </div>
           <ul class="work__contents__tab-content__list__details__languages">
-            <li class = "work__contents__tab-content__list__details__languages__lang">
-                <%= language.text %>
-            </li>
+          <% work.languages.each do |language| %>
+          <li class = "work__contents__tab-content__list__details__languages__lang">
+               <%= language.text %>
+          </li>
+          <% end %>
+
           </ul>
         </div>
       </div>
@@ -93,21 +96,24 @@
   <div class="work__contents__tab-content content3">
     <% @works.each do |work| %>
     <% work.languages.each do |language| %>
-    <% if language.text.include?("Python") %>
+    <% if language.text.include?("Javascript") %>
       <div class="work__contents__tab-content__list">
         <div class="work__contents__tab-content__list__img">
-           <img src="<%= "#{work.image}" %>">
-
+          <%= link_to work_path(work.id) do %>
+          <img src="<%= "#{work.image}" %>"> 
+          <% end %> 
         </div>
         <div class="work__contents__tab-content__list__details">
           <div class="work__contents__tab-content__list__details__name">
-            <%= link_to work.title, "#" %>
+           <%= link_to work.title, work_path(work.id) %>
+
           </div>
           <ul class="work__contents__tab-content__list__details__languages">
-            <li class = "work__contents__tab-content__list__details__languages__lang">
-                <%= language.text %>
-            </li>
-          </ul>
+          <% work.languages.each do |language| %>
+          <li class = "work__contents__tab-content__list__details__languages__lang">
+               <%= language.text %>
+          </li>
+          <% end %>
         </div>
       </div>
     <% else %>
