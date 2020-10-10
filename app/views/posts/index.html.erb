@@ -69,7 +69,6 @@
           <table>
             <thead>
                 <tr>
-                  <th scope="col">ID</th>
                   <th scope="col">Title</th>
                   <th scope="col">Description</th>
                   <th scope="col">Created_at</th>
@@ -87,7 +86,6 @@
             <tbody>
               <% @vlogs.each do |vlog| %>
               <tr>
-                <td><%= vlog.id%></td>
                 <td><%= vlog.title%></td>
                 <td class="description"><%= vlog.description%></td>
                 <td><%= vlog.created_at.strftime '%Y-%m-%d'%></td>
@@ -131,7 +129,6 @@
           <table>
             <thead>
                 <tr>
-                  <th scope="col">ID</th>
                   <th scope="col">Image</th>
                   <th scope="col">Title</th>
                   <th scope="col">Description</th>
@@ -150,7 +147,6 @@
             <tbody>
               <% @works.each do |work| %>
               <tr class="work">
-                <td><%= work.id%></td>
                 <td class="image">
                  <img src="<%= "#{work.image}" %>" width="100" height="auto">
                 </td>
@@ -162,6 +158,7 @@
                   <%= link_to "Detail", work_path(work.id), class: "postManage__preview" %>
                   <%= link_to "Edit", edit_work_path(work.id), class: "postManage__edit" %>
                   <%= link_to "Delete", work_path(work.id), method: :delete, class: "postManage__delete" %>
+
                 </td>
               </tr>
               <% end %>

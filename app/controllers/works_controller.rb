@@ -30,7 +30,7 @@ class WorksController < ApplicationController
     work = Work.find(params[:id])
     work.destroy
     redirect_to posts_path
-    render
+  
     
   end
 
