@@ -9,7 +9,11 @@ class LanguagesController < ApplicationController
     Language.create(language_params)
     redirect_to posts_path
   end
-
+  def destroy
+    language = Language.find(params[:id])
+    language.destroy
+    redirect_to posts_path
+  end
   private
   def language_params
     params.require(:language).permit(:text)

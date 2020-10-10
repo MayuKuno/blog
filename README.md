@@ -1,93 +1,48 @@
-
 # Project Title
 Portfolio/Blog
 
 ## Project Overview
+九野真優のポートフォリオ/情報発信プラットフォーム
 
+## Production environment
+[サイトへ](https://ninefsblog.herokuapp.com/)
 
-## 本番環境(デプロイ先　テストアカウント＆ID)
 
 ## Motivation
-　⇒どんな課題や不便なことを解決するためにこのアプリを作ったのか。
+情報発信プラットフォームです。自分自身の成長記録であると同時にと私が持っている情報を必要としている人々に提供するプラットフォームを設けたく作成しました。
 
 ## Screenshots
-特に、デプロイがまだできていない場合はDEMOをつけることで見た目を企業側に伝えることができます
+|  Top page  |  
+| ---- | 
+|<img width="1440" alt="Screen Shot 2020-10-10 at 12 18 24" src="https://user-images.githubusercontent.com/44453318/95652142-01b36c80-0b2a-11eb-8d06-6e4e2c62fee6.png">|
+ 
+
+|  About page  |  
+| ---- | 
+|<img width="1440" alt="Screen Shot 2020-10-10 at 18 55 09" src="https://user-images.githubusercontent.com/44453318/95652168-2871a300-0b2a-11eb-9bc4-85d59c43be3f.png">|
 
 
-## Features
-工夫したポイント
+|  Work page  |  
+| ---- | 
+|<img width="1440" alt="Screen Shot 2020-10-10 at 19 13 26" src="https://user-images.githubusercontent.com/44453318/95652537-b51d6080-0b2c-11eb-8b92-e7c444db61cc.png">
+|
 
-## Getting Started
+|  Blog page  |  
+| ---- | 
+|<img width="1440" alt="Screen Shot 2020-10-10 at 19 14 30" src="https://user-images.githubusercontent.com/44453318/95652559-f57cde80-0b2c-11eb-8cae-726cedc6dbd9.png">|
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+|  Admin page  |  
+| ---- | 
+|<img width="1440" alt="Screen Shot 2020-10-10 at 19 15 12" src="https://user-images.githubusercontent.com/44453318/95652560-fa419280-0b2c-11eb-8147-d04d04bbdc58.png">|
 
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+ 
 
 ## Authors
+**Mayu Kuno** 
+　- [Github](https://github.com/MayuKuno)
+　- [Portfolio](https://ninefsblog.herokuapp.com/)
 
-* **Billie Thompson** 
 
-## 課題や今後実装したい機能
-
+## Function/features to improve
+- 全体的なデザインのブラッシュアップ
+- リッチテキストエディタ
