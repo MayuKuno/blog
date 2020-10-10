@@ -1,9 +1,9 @@
 
 # Project Title
-
-One Paragraph of project description goes here
+Portfolio/Blog
 
 ## Project Overview
+
 
 ## 本番環境(デプロイ先　テストアカウント＆ID)
 
@@ -87,22 +87,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## 使用技術(開発環境)
+* **Billie Thompson** 
 
 ## 課題や今後実装したい機能
 
-## DB設計
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
