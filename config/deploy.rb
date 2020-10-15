@@ -1,5 +1,6 @@
 # Gemfile.lockを見てcapistranoのバージョンを入れる
 lock '3.14.1'
+set :linked_files, fetch(:linked_files, []).push("config/master.key")
 
 # 自身のアプリ名、リポジトリ名を記述
 set :application, 'blog'

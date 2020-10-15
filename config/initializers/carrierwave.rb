@@ -26,6 +26,7 @@ if Rails.env.production?
       :region                => ENV['AWS_S3_REGION'],     # 例（東京）: 'ap-northeast-1'
       :aws_access_key_id     => ENV['AWS_IAM_ACCESS_KEY_ID'],
       :aws_secret_access_key => ENV['AWS_IAM_ACCESS_KEY']
+      
     }
     config.fog_directory     =  ENV['AWS_S3_BUCKET']
     # キャッシュの保存期間
