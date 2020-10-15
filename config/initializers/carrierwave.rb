@@ -5,7 +5,6 @@ require 'carrierwave/storage/fog'
 
 if Rails.env.production?
   CarrierWave.configure do |config|
-    config.fog_provider = 'fog/aws'
     config.fog_credentials = {
       # Amazon S3用の設定
       provider: 'AWS',
@@ -15,8 +14,12 @@ if Rails.env.production?
     }
     config.fog_directory     =  ENV['AWS_S3_BUCKET']
     config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
+    config.cache_storage = :fog
+    config.fog_public = false # ←コレ
   end
 
   # 日本語ファイル名の設定
   CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
 end
+
+
