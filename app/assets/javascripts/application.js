@@ -41,6 +41,6 @@
 //= require plugins/url.min
 //= require plugins/video.min
 //= require languages/ja
-  
+
 //= require_tree .
 

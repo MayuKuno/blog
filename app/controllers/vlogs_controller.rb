@@ -21,7 +21,7 @@ class VlogsController < ApplicationController
   end
   def update
     vlog = Vlog.find(params[:id])
-    vlog.update(vlog_params)
+   vlog.update(vlog_params)
     redirect_to vlog_path(vlog.id)
   end
 

@@ -52,6 +52,14 @@
     <%= form.text_area :description, class: :adminnew_contents__form__description %>
     <div class="adminnew_contents__form__item">Content</div>
     <%= form.text_area :content, class: :adminnew_contents__form__content %>
+<script>
+new FroalaEditor('#vlog_content', {
+      language: 'ja',
+    heightMin: 500,
+    heightMax: 750,
+});
+
+</script>
     <%= form.submit 'Edit', class: :adminnew_contents__form__btn %>
     <%= link_to "Dashboard", posts_path, class: "adminnew_contents__form__back" %>
 
