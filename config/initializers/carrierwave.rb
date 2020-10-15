@@ -12,10 +12,8 @@
 
 #   config.fog_directory  =  ENV['AWS_S3_BUCKET']
 #   config.asset_host = "https://s3.ap-northeast-1.amazonaws.com/ninefsblog"
-#   config.cache_storage = :fog
-#   config.fog_public = false # ←コレ
-# end
 
+# end
 
 
 
