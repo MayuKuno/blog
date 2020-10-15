@@ -30,7 +30,7 @@
         <div class="blog__contents__bottom__articles__list">
           <div class="blog__contents__bottom__articles__list__img">
             <%= link_to vlog_path(vlog.id), target: "_blank" do %>
-              <img src="<%= "#{vlog.image}" %>"> 
+              <img src="<%= "#{vlog.image.to_s}" %>"> 
             <% end %> 
           </div>
           <div class="blog__contents__bottom__articles__list__title">

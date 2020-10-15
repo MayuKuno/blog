@@ -83,7 +83,7 @@ gem 'pry-rails'
 gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'wysiwyg-rails'
-
+gem 'fog-aws'
 
 # 以下全てをGemfile下部にコピー
 group :production do

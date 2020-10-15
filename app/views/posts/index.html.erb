@@ -55,7 +55,7 @@
         <% @vlogs.each do |vlog| %>
            <div class="post__contents__content__dashboard__blogPhone__img">
             <%= link_to vlog_path(vlog.id) do %>
-              <img src="<%= "#{vlog.image}" %>"> 
+              <img src="<%= "#{vlog.image.to_s}" %>"> 
             <% end %> 
             </div>
           <div class="post__contents__content__dashboard__blogPhone__title">
@@ -112,7 +112,7 @@
         <% @works.each do |work| %>
            <div class="post__contents__content__dashboard__blogPhone__img">
             <%= link_to work_path(work.id) do %>
-              <img src="<%= "#{work.image}" %>"> 
+              <img src="<%= "#{work.image.to_s}" %>"> 
             <% end %> 
             </div>
           <div class="post__contents__content__dashboard__blogPhone__title">
@@ -148,7 +148,7 @@
               <% @works.each do |work| %>
               <tr class="work">
                 <td class="image">
-                 <img src="<%= "#{work.image}" %>" width="100" height="auto">
+                 <img src="<%= "#{work.image.to_s}" %>" width="100" height="auto">
                 </td>
                 <td><%= work.title%></td>
                 <td class="description"><%= work.description %></td>

@@ -9,6 +9,15 @@ class ImageUploader < CarrierWave::Uploader::Base
   process resize_to_fit: [800, 800]
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
+
+  if Rails.env.development?
+    storage :fog
+  elsif Rails.env.test?
+    storage :fog
+  else
+    storage :fog
+  end
+
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
@@ -44,4 +53,16 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+
+
+
+
+  
+  def extension_whitelist
+    %w(jpg jpeg gif png)
+  end
+  # ここでファイル形式を指定する
+  def filename
+    original_filename if original_filename
+  end
 end
