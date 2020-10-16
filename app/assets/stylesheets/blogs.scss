@@ -1413,7 +1413,6 @@
       &__articles{
         position: relative;
         width: 934px;
-        height: 1334px;
         box-shadow: 0 1rem 3rem rgba(0,0,0,0.175) !important;
         background-color: #fffaf0;
         display: flex;
@@ -1421,8 +1420,8 @@
         margin-right: 50px;
         justify-content: space-between;
         margin-bottom: 50px;
-        padding-right: 80px;
-        padding-left: 80px;
+        padding-right: 40px;
+        padding-left: 40px;
         padding-bottom: 50px;
         padding-top: 20px;
 
@@ -1452,7 +1451,7 @@
           &__list{
             background-color: #fffaf0;
             border: 1px solid #e0e0e0;
-            width: 350px;
+            width: 48%;
             text-align:center;
             margin-top: 50px;
             box-shadow: 0 1rem 3rem rgba(0,0,0,0.175) !important;
