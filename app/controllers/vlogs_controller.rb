@@ -1,5 +1,5 @@
 class VlogsController < ApplicationController
-  before_action :hash_init
+  # before_action :hash_init
   def index
     @vlogs = Vlog.all.page(params[:page]).per(6)
     @categories = Category.all
