@@ -57,9 +57,12 @@ new FroalaEditor('#vlog_content', {
       language: 'ja',
     heightMin: 300,
     heightMax: 750,
+    imageUploadToS3: <%= @aws_data.to_json.html_safe %>,
 });
 
 </script>
+
+
 
     <%= form.submit 'Post it', class: :adminnew_contents__form__btn %>
     <%= link_to "Dashboard", posts_path, class: "adminnew_contents__form__back" %>
