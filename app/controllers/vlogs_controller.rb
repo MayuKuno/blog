@@ -1,5 +1,5 @@
 class VlogsController < ApplicationController
-  # before_action :hash_init
+  before_action :hash_init
   def index
     @vlogs = Vlog.all.page(params[:page]).per(6)
     @categories = Category.all
@@ -37,29 +37,18 @@ class VlogsController < ApplicationController
     params.require(:vlog).permit(:title, :content, :image, :description, category_ids: [])
   end
 
-  # def hash_init
-  #   options = {
-  #     bucket: ENV['AWS_S3_BUCKET'],
-  #     region: ENV['AWS_DEFAULT_REGION'],
-  #     keyStart: 'uploads/', # uploads/filename.png
-  #     acl: 'public-read',
-  #     accessKey:  ENV['AWS_ACCESS_KEY_ID'], # 環境変数などで設定して直に書かない
-  #     secretKey: ENV['AWS_SECRET_ACCESS_KEY']
-  #   }
-  #    @aws_data = FroalaEditorSDK::S3.data_hash(options)
-  # end
 
-#   def hash_init
-#     options = {
-#       bucket: ENV['AWS_S3_BUCKET'],
-#       region: ENV['AWS_DEFAULT_REGION'],
-#       keyStart: 'uploads', 
-#       acl: 'public-read',
-#       accessKey: ENV['AWS_ACCESS_KEY_ID'],
-#       secretKey: ENV['AWS_SECRET_ACCESS_KEY'],
-#     }
-#      @aws_data = FroalaEditorSDK::S3.data_hash(options)
-# end
+  def hash_init
+    options = {
+      bucket: ENV['AWS_S3_BUCKET'],
+      region: ENV['AWS_DEFAULT_REGION'],
+      keyStart: 'uploads', 
+      acl: 'public-read',
+      accessKey: ENV['AWS_ACCESS_KEY_ID'],
+      secretKey: ENV['AWS_SECRET_ACCESS_KEY'],
+    }
+     @aws_data = FroalaEditorSDK::S3.data_hash(options)
+end
   
 
 end
