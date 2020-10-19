@@ -1424,23 +1424,24 @@
         padding-left: 40px;
         padding-bottom: 50px;
         padding-top: 20px;
+          &__categoryname{
+            background-color: #494c4e;
+            font-size: 15px;
+            color: beige;
+            width: 180px;
+            height: 40px;
+            line-height: 40px;
+            padding-right: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            display: inline;
+            position: absolute;
+            top: 20px;
+            left: 0;
+            text-align: right;
+          }
+        
 
-        span{
-          background-color: #494c4e;
-          font-size: 15px;
-          color: beige;
-          width: 180px;
-          height: 40px;
-          line-height: 40px;
-          padding-right: 20px;
-          text-transform: uppercase;
-          font-weight: bold;
-          display: inline;
-          position: absolute;
-          top: 20px;
-          left: 0;
-          text-align: right;
-        }
           &__title{
             height:20px;
             margin-bottom:30px;

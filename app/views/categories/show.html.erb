@@ -26,9 +26,7 @@
     </div>
     <div class="blog__contents__bottom">
       <div class="blog__contents__bottom__articles">
-        <span> <%= @category.text %></span>
-
-       
+          <span class="blog__contents__bottom__articles__categoryname"> <%= @category.text %></span>
       <% @category.vlogs.each do |vlog| %>
         <div class="blog__contents__bottom__articles__list">
           <div class="blog__contents__bottom__articles__list__img">
