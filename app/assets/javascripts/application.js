@@ -23,6 +23,7 @@
 //= require plugins/emoticons.min
 //= require plugins/entities.min
 //= require plugins/file.min
+
 //= require plugins/font_family.min
 //= require plugins/font_size.min
 //= require plugins/fullscreen.min

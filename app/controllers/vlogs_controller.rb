@@ -21,6 +21,8 @@ class VlogsController < ApplicationController
     @vlog = Vlog.find(params[:id])
   end
   def update
+    binding.pry
+
     vlog = Vlog.find(params[:id])
    vlog.update(vlog_params)
     redirect_to vlog_path(vlog.id)
@@ -39,15 +41,15 @@ class VlogsController < ApplicationController
 
 
   def hash_init
-    options = {
-      bucket: ENV['AWS_S3_BUCKET'],
-      region: ENV['AWS_DEFAULT_REGION'],
-      keyStart: 'uploads', 
-      acl: 'public-read',
-      accessKey: ENV['AWS_ACCESS_KEY_ID'],
-      secretKey: ENV['AWS_SECRET_ACCESS_KEY'],
-    }
-     @aws_data = FroalaEditorSDK::S3.data_hash(options)
+        options = {
+          bucket:  ENV['AWS_S3_BUCKET'],
+          region: ENV['AWS_DEFAULT_REGION'],
+          keyStart: 'uploads',
+          acl: 'public-read',
+          accessKey:ENV['AWS_ACCESS_KEY_ID'],
+          secretKey: ENV['AWS_SECRET_ACCESS_KEY']
+        }
+        @aws_data = FroalaEditorSDK::S3.data_hash(options)
 end
   
 
