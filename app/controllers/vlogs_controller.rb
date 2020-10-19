@@ -7,15 +7,6 @@ class VlogsController < ApplicationController
   end
   def new
     @vlog = Vlog.new
-    options = {
-      bucket:  ENV['AWS_S3_BUCKET'],
-      region: ENV['AWS_DEFAULT_REGION'],
-      keyStart: 'uploads',
-      acl: 'public-read',
-      accessKey:ENV['AWS_ACCESS_KEY_ID'],
-      secretKey: ENV['AWS_SECRET_ACCESS_KEY']
-    }
-    @aws_data = FroalaEditorSDK::S3.data_hash(options)
   end
   def create
     Vlog.create(vlog_params)
