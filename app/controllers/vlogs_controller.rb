@@ -3,6 +3,10 @@ class VlogsController < ApplicationController
   def index
     @vlogs = Vlog.all.page(params[:page]).per(6)
     @categories = Category.all
+
+  end
+  def new
+    @vlog = Vlog.new
     options = {
       bucket:  ENV['AWS_S3_BUCKET'],
       region: ENV['AWS_DEFAULT_REGION'],
@@ -12,9 +16,6 @@ class VlogsController < ApplicationController
       secretKey: ENV['AWS_SECRET_ACCESS_KEY']
     }
     @aws_data = FroalaEditorSDK::S3.data_hash(options)
-  end
-  def new
-    @vlog = Vlog.new
   end
   def create
     Vlog.create(vlog_params)
