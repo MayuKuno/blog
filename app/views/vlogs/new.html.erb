@@ -53,13 +53,13 @@
     <div class="adminnew_contents__form__item">Content</div>
     <%= form.text_area :content, class: :adminnew_contents__form__content%>
 <script>
-new FroalaEditor('#vlog_content', {
-      language: 'ja',
-    heightMin: 300,
+$(function() {
+  $('#vlog_content').froalaEditor({
+    language: 'ja',
+    heightMin: 500,
     heightMax: 750,
-    // imageUploadToS3: <%= @aws_data.to_json.html_safe %>,
+  })
 });
-
 </script>
 
 
