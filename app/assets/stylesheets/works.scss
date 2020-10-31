@@ -111,7 +111,14 @@
           }
         }
         &__none{
-          // height: 500px;
+          min-height: 500px;
+          margin: 0 auto;
+          line-height: 500px;
+          p{
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 3px;
+          }
         }
         &__content1{
           display: flex;
@@ -399,7 +406,14 @@
           }
         }
         &__none{
-          // height: 500px;
+          min-height: 500px;
+          margin: 0 auto;
+          line-height: 500px;
+          p{
+            font-size: 40px;
+            font-weight: bold;
+            letter-spacing: 3px;
+          }
         }
         &__content1{
           display: flex;
@@ -691,7 +705,14 @@
           }
         }
         &__none{
-          // height: 500px;
+          min-height: 500px;
+          margin: 0 auto;
+          line-height: 500px;
+          p{
+            font-size: 40px;
+            font-weight: bold;
+            letter-spacing: 3px;
+          }
         }
         &__content1{
           display: flex;

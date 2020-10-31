@@ -28,7 +28,7 @@
       <div class='work__contents__tabs__tab-buttons'>
         <span class='content1'>All</span>
         <span class='content2'>Ruby on Rails</span>
-        <span class='content3'>Javascript</span>
+        <span class='content3'>Python</span>
         <div id='lamp' class='content1'></div>
       </div>
     </div>
@@ -43,8 +43,6 @@
           <img src="<%= "#{work.image}" %>"> 
          <% end %> 
       </div>
-
-
       <div class="work__contents__tab-content__list__details">
         <div class="work__contents__tab-content__list__details__name">
           <%= link_to work.title, work_path(work.id) %>
@@ -96,7 +94,7 @@
   <div class="work__contents__tab-content content3">
     <% @works.each do |work| %>
     <% work.languages.each do |language| %>
-    <% if language.text.include?("Javascript") %>
+    <% if language.text.include?("Python") %>
       <div class="work__contents__tab-content__list">
         <div class="work__contents__tab-content__list__img">
           <%= link_to work_path(work.id) do %>
@@ -106,7 +104,6 @@
         <div class="work__contents__tab-content__list__details">
           <div class="work__contents__tab-content__list__details__name">
            <%= link_to work.title, work_path(work.id) %>
-
           </div>
           <ul class="work__contents__tab-content__list__details__languages">
           <% work.languages.each do |language| %>
@@ -114,13 +111,17 @@
                <%= language.text %>
           </li>
           <% end %>
-        </div>
+        </ul>
+      </div>
       </div>
     <% else %>
-      <div class="work__contents__tab-content__none"></div>
+       <% end %>
+       <% end %>
     <% end %>
-    <% end %>
-    <% end %>
+      <div class="work__contents__tab-content__none">
+      <p>Coming soon</p>
+      </div>
+
   </div>
 <!-- ======================================== -->
 </div>
