@@ -444,6 +444,7 @@
   .container{
     display: flex;
     justify-content: space-between;
+    position: relative;
     &__logo{
       width: 120px;
       height: 100px;
@@ -459,7 +460,17 @@
         text-decoration:none;
       }
     }
-    
+    .copyright{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      font-size: 13px;
+      margin: 0 auto;
+      p{
+        text-align: center;
+      }
+
+    }
   }
   .navigation{
     display: flex;

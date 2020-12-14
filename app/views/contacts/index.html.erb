@@ -16,26 +16,37 @@
     <h2 class="contents__content__ttl">Works</h2>
     <div class="contents__content__workList">
     <% @works.first(3).each do |work| %>
-    <div class="contents__content__workList__list">
-      <div class="contents__content__workList__list__img">
-         <%= link_to work_path(work.id), target: "_blank" do %>
-          <img src="<%= "#{work.image}" %>"> 
-         <% end %> 
-      </div>
 
-      <div class="contents__content__workList__list__details">
-        <div class="contents__content__workList__list__details__name">
-          <%= link_to work.title, work_path(work.id) %>
-        </div>
-        <ul class="work__contents__tab-content__list__details__languages">
-          <% work.languages.each do |language| %>
-          <li class = "work__contents__tab-content__list__details__languages__lang">
-               <%= language.text %>
-          </li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
+          <div class="work">
+          <%= link_to "/works/#{work.id}" do %>
+           <img src="<%= "#{work.image}" %>"> 
+
+            <div class="mask">
+              <div class="inside">
+              <%#  <div class="manage">
+                  <ul class="manage__lists">
+                    <li>  
+                      <%= link_to "/works/#{work.id}/edit", method: :get do %> 
+                       <%#  <i class="fas fa-edit"></i> Edit 
+                    <%#   <% end %> 
+                   <%#  </li> 
+                    <li> 
+                      <a class="modal-open-btn"><i class="fas fa-trash-alt"></i> Delete</a> 
+                      <%= link_to "", "/workd/#{work.id}", method: :DELETE, class: 'item-delete-btn', id: 'delete_button'%>  
+                <%#     </li>
+                  </ul>
+                </div>%>
+                <%= link_to "/works/#{work.id}" do %>
+                <div class="title">
+                  <p><%= work.title %></p>
+                </div>
+                <% end %>
+             </div>
+            </div>
+            <% end %> 
+          </div>
+    
+
     <% end %>
     </div>
     <div class="contents__content__all">
@@ -124,15 +135,6 @@
       </div>
     </div>
 </div>
-<footer>
-  <div class="container">
-  <ul class="navigation">
-      <li class="navigation__list-item footer"><a href="/about">About</a></li>
-      <li class="navigation__list-item footer"><a href="/works">WORK</a></li>
-      <li class="navigation__list-item footer"><a href="/vlogs">BLOG</a></li>
-    </ul>
-    <div class="container__logo">
-      <a class="container__logo__content" href="/">NINEFS</a>
-    </div>
-  </div>
-</footer>
+
+
+<%= render 'layouts/footer'%>

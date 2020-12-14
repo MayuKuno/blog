@@ -37,25 +37,42 @@
   <div class="work__contents__tab-contents">
   <div class="work__contents__tab-content content1">
     <% @works.each do |work| %>
-    <div class="work__contents__tab-content__list">
-      <div class="work__contents__tab-content__list__img">
-         <%= link_to work_path(work.id) do %>
-          <img src="<%= "#{work.image}" %>"> 
-         <% end %> 
-      </div>
-      <div class="work__contents__tab-content__list__details">
-        <div class="work__contents__tab-content__list__details__name">
-          <%= link_to work.title, work_path(work.id) %>
-        </div>
-        <ul class="work__contents__tab-content__list__details__languages">
-          <% work.languages.each do |language| %>
-          <li class = "work__contents__tab-content__list__details__languages__lang">
-               <%= language.text %>
-          </li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
+          <div class="work">
+          <%= link_to "/works/#{work.id}" do %>
+           <img src="<%= "#{work.image}" %>"> 
+
+            <div class="mask">
+              <div class="inside">
+              <%#  <div class="manage">
+                  <ul class="manage__lists">
+                    <li>  
+                      <%= link_to "/works/#{work.id}/edit", method: :get do %> 
+                       <%#  <i class="fas fa-edit"></i> Edit 
+                    <%#   <% end %> 
+                   <%#  </li> 
+                    <li> 
+                      <a class="modal-open-btn"><i class="fas fa-trash-alt"></i> Delete</a> 
+                      <%= link_to "", "/workd/#{work.id}", method: :DELETE, class: 'item-delete-btn', id: 'delete_button'%>  
+                <%#     </li>
+                  </ul>
+                </div>%>
+                <%= link_to "/works/#{work.id}" do %>
+                <div class="title">
+                  <p><%= work.title %></p>
+                </div>
+                <% end %>
+             </div>
+            </div>
+            <% end %> 
+          </div>
+
+
+
+
+
+
+
+    
     <% end %>
   </div>
   <!-- ======================================== -->
@@ -63,28 +80,47 @@
     <% @works.each do |work| %>
     <% work.languages.each do |language| %>
     <% if language.text.include?("Ruby") %>
-      <div class="work__contents__tab-content__list">
-        <div class="work__contents__tab-content__list__img">
-        <%= link_to work_path(work.id) do %>
-          <img src="<%= "#{work.image}" %>"> 
-         <% end %> 
-        </div>
-        <div class="work__contents__tab-content__list__details">
-          <div class="work__contents__tab-content__list__details__name">
-          <%= link_to work.title, work_path(work.id) %>
-          </div>
-          <ul class="work__contents__tab-content__list__details__languages">
-          <% work.languages.each do |language| %>
-          <li class = "work__contents__tab-content__list__details__languages__lang">
-               <%= language.text %>
-          </li>
-          <% end %>
+  
 
-          </ul>
-        </div>
-      </div>
+          <div class="work">
+          <%= link_to "/works/#{work.id}" do %>
+           <img src="<%= "#{work.image}" %>"> 
+
+            <div class="mask">
+              <div class="inside">
+              <%#  <div class="manage">
+                  <ul class="manage__lists">
+                    <li>  
+                      <%= link_to "/works/#{work.id}/edit", method: :get do %> 
+                       <%#  <i class="fas fa-edit"></i> Edit 
+                    <%#   <% end %> 
+                   <%#  </li> 
+                    <li> 
+                      <a class="modal-open-btn"><i class="fas fa-trash-alt"></i> Delete</a> 
+                      <%= link_to "", "/workd/#{work.id}", method: :DELETE, class: 'item-delete-btn', id: 'delete_button'%>  
+                <%#     </li>
+                  </ul>
+                </div>%>
+                <%= link_to "/works/#{work.id}" do %>
+                <div class="title">
+                  <p><%= work.title %></p>
+                </div>
+                <% end %>
+             </div>
+            </div>
+            <% end %> 
+          </div>
+
+
+
+
     <% else %>
     <% end %>
+
+
+
+
+
     <% end %>
     <% end %>
   </div>
@@ -94,25 +130,40 @@
     <% @works.each do |work| %>
     <% work.languages.each do |language| %>
     <% if language.text.include?("Python") %>
-      <div class="work__contents__tab-content__list">
-        <div class="work__contents__tab-content__list__img">
-          <%= link_to work_path(work.id) do %>
-          <img src="<%= "#{work.image}" %>"> 
-          <% end %> 
-        </div>
-        <div class="work__contents__tab-content__list__details">
-          <div class="work__contents__tab-content__list__details__name">
-           <%= link_to work.title, work_path(work.id) %>
+
+          <div class="work">
+          <%= link_to "/works/#{work.id}" do %>
+           <img src="<%= "#{work.image}" %>"> 
+
+            <div class="mask">
+              <div class="inside">
+              <%#  <div class="manage">
+                  <ul class="manage__lists">
+                    <li>  
+                      <%= link_to "/works/#{work.id}/edit", method: :get do %> 
+                       <%#  <i class="fas fa-edit"></i> Edit 
+                    <%#   <% end %> 
+                   <%#  </li> 
+                    <li> 
+                      <a class="modal-open-btn"><i class="fas fa-trash-alt"></i> Delete</a> 
+                      <%= link_to "", "/workd/#{work.id}", method: :DELETE, class: 'item-delete-btn', id: 'delete_button'%>  
+                <%#     </li>
+                  </ul>
+                </div>%>
+                <%= link_to "/works/#{work.id}" do %>
+                <div class="title">
+                  <p><%= work.title %></p>
+                </div>
+                <% end %>
+             </div>
+            </div>
+            <% end %> 
           </div>
-          <ul class="work__contents__tab-content__list__details__languages">
-          <% work.languages.each do |language| %>
-          <li class = "work__contents__tab-content__list__details__languages__lang">
-               <%= language.text %>
-          </li>
-          <% end %>
-        </ul>
-      </div>
-      </div>
+
+
+
+
+
     <% else %>
        <% end %>
        <% end %>
@@ -135,6 +186,9 @@
       <li class="navigation__list-item footer work-nav"><a href="/works">WORK</a></li>
       <li class="navigation__list-item footer"><a href="/vlogs">BLOG</a></li>
     </ul>
+    <div class="copyright">
+      <p>© 2020 NINEFS</p>
+    </div>
     <div class="container__logo">
       <a class="container__logo__content" href="/">NINEFS</a>
     </div>
