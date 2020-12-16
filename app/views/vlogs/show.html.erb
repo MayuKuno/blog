@@ -31,7 +31,9 @@
                 <% if admin_signed_in? %>
           <ul class="details__contents__article__titles__manage">
             <li><%= link_to "Edit", edit_vlog_path(@vlog.id) %></li>
-           <li> <%= link_to "Delete", vlog_path(@vlog.id), method: :delete %></li>
+           <li> <a class="modal-open-btn">Delete</a>
+                <%= link_to "", vlog_path(@vlog.id), method: :delete, class: 'item-delete-btn', id: 'delete_button' %>
+            </li>
            <li> <%= link_to "Dashboard", posts_path %></li>
           </ul>
         <% else %>

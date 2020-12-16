@@ -82,7 +82,8 @@
     <% if admin_signed_in? %>
     <div class="postManage">
       <%= link_to "Edit", edit_work_path(@work.id), class: "postManage__edit" %>
-      <%= link_to "Delete", work_path(@work.id), method: :delete, class: "postManage__delete" %>
+      <a class="modal-open-btn postManage__delete">Delete</a>
+      <%= link_to "", work_path(@work.id), method: :delete, class: 'item-delete-btn', id: 'delete_button' %>
       <%= link_to "Dashboard", posts_path, class: "postManage__dashboard" %>
 
     </div>
