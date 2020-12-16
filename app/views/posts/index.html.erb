@@ -92,7 +92,8 @@
                 <td>
                   <%= link_to "Detail", vlog_path(vlog.id), class: "postManage__preview" %>
                   <%= link_to "Edit", edit_vlog_path(vlog.id), class: "postManage__edit" %>
-                  <%= link_to "Delete", vlog_path(vlog.id), method: :delete, class: "postManage__delete" %>
+                  <a class="modal-open-btn postManage__delete">Delete</a>
+                  <%= link_to "", vlog_path(vlog.id), method: :delete, class: 'item-delete-btn', id: 'delete_button' %>
                 </td>
               </tr>
               <% end %>
@@ -157,8 +158,8 @@
                 <td>
                   <%= link_to "Detail", work_path(work.id), class: "postManage__preview" %>
                   <%= link_to "Edit", edit_work_path(work.id), class: "postManage__edit" %>
-                  <%= link_to "Delete", work_path(work.id), method: :delete, class: "postManage__delete" %>
-
+                  <a class="modal-open-btn postManage__delete">Delete</a>
+                  <%= link_to "", work_path(work.id), method: :delete, class: 'item-delete-btn', id: 'delete_button' %>
                 </td>
               </tr>
               <% end %>
