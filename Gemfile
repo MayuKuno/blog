@@ -85,7 +85,8 @@ gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'wysiwyg-rails'
 gem 'fog-aws'
 gem 'froala-editor-sdk'
-# 以下全てをGemfile下部にコピー
+gem 'marked-rails'
+gem 'gon'
 group :production do
   gem 'unicorn'
 

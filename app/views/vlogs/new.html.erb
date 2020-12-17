@@ -51,8 +51,8 @@
     <div class="adminnew_contents__form__item">Description</div>
     <%= form.text_area :description, class: :adminnew_contents__form__description %>
     <div class="adminnew_contents__form__item">Content</div>
-    <%= form.text_area :content, class: :adminnew_contents__form__content%>
-<script>
+    <%# <%= form.text_area :content, class: :adminnew_contents__form__content%><%# %>
+<%# <script>
 
 new FroalaEditor('#vlog_content', {
       language: 'ja',
@@ -60,18 +60,22 @@ new FroalaEditor('#vlog_content', {
     heightMax: 750,
     
 });
- 
- 
-</script>
+</script> %>
 
-
-
+    <div class="form-group">
+      <div id='editor'>
+        <textarea name="vlog[content]" class="form-control" rows="20"></textarea>
+        <div id="marked-area"></div>
+      </div>
+    </div>
     <%= form.submit 'Post it', class: :adminnew_contents__form__btn %>
     <%= link_to "Dashboard", posts_path, class: "adminnew_contents__form__back" %>
 
   <% end %>
   </div>
 </div>
+
+
 <!-- ======================================== -->           
 <footer>
   <div class="container">

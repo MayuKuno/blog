@@ -26,9 +26,9 @@
 
       <div class="details__contents__article__titles__title">
         <%= simple_format(@vlog.title) %>
-
       </div>
-                <% if admin_signed_in? %>
+
+        <% if admin_signed_in? %>
           <ul class="details__contents__article__titles__manage">
             <li><%= link_to "Edit", edit_vlog_path(@vlog.id) %></li>
            <li> <a class="modal-open-btn">Delete</a>
@@ -52,7 +52,13 @@
    
     </div>
     <div class="details__contents__article__content fr-view fr-element">
-      <%== @vlog.content %>
+      <%# <%== @vlog.content %><%# %>
+      <div id="marked-area">
+      </div>
+      <script>
+        document.getElementById('marked-area').innerHTML =
+        marked(gon.content);
+      </script>
 
     </div>
 

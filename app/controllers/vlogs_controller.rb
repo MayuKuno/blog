@@ -15,6 +15,7 @@ class VlogsController < ApplicationController
   def show
     @vlog = Vlog.find(params[:id])
     @categories = Category.all
+    gon.content = @vlog.content
 
   end
   def edit
