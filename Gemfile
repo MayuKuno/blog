@@ -84,7 +84,6 @@ gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'wysiwyg-rails'
 gem 'fog-aws'
-gem 'froala-editor-sdk'
 gem 'marked-rails'
 gem 'gon'
 group :production do
