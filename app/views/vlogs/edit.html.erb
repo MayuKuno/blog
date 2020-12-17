@@ -53,13 +53,14 @@
     <div class="adminnew_contents__form__item">Content</div>
     <div class="form-group">
       <div id='editor'>
-        <textarea name="vlog[content]" class="form-control adminnew_contents__form__content" rows="20"></textarea>
+          <%= form.text_area :content, class: :adminnew_contents__form__content %>
       </div>
     </div>
     <div class="adminnew_contents__form__preview">
       Preview
       <div id="marked-area"></div>
     </div>
+
     <%= form.submit 'Edit', class: :adminnew_contents__form__btn %>
     <%= link_to "Dashboard", posts_path, class: "adminnew_contents__form__back" %>
 
