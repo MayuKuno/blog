@@ -2,9 +2,8 @@
     def index
       @contacts = Contact.all
       @contact = Contact.new
-      @vlogs = Vlog.all
-      @works = Work.all
-
+      @vlogs = Vlog.published
+      @works = Work.published
     end
 
     def create
