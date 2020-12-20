@@ -72,6 +72,8 @@
                   <th scope="col">Title</th>
                   <th scope="col">Description</th>
                   <th scope="col">Created_at</th>
+                  <th scope="col">Status</th>
+
                   <th scope="col">
                     <div class="post__contents__content__dashboard__blog__new">
                       <i class="fas fa-edit post__contents__content__dashboard__blog__new__icon"></i>
@@ -89,6 +91,14 @@
                 <td><%= vlog.title%></td>
                 <td class="description"><%= vlog.description%></td>
                 <td><%= vlog.created_at.strftime '%Y-%m-%d'%></td>
+                <td>
+                 <% if vlog.draft? %>
+                  <%= "下書き" %>
+                  <% else %>
+                   <%= "公開中" %>
+                   <% end %>
+                </td>
+
                 <td>
                   <%= link_to "Detail", vlog_path(vlog.id), class: "postManage__preview" %>
                   <%= link_to "Edit", edit_vlog_path(vlog.id), class: "postManage__edit" %>
@@ -133,6 +143,7 @@
                   <th scope="col">Image</th>
                   <th scope="col">Title</th>
                   <th scope="col">Description</th>
+                  <th scope="col">Status</th>
 
                   <th scope="col">
                     <div class="post__contents__content__dashboard__blog__new">
@@ -153,7 +164,13 @@
                 </td>
                 <td><%= work.title%></td>
                 <td class="description"><%= work.description %></td>
-
+                <td>
+                 <% if work.draft? %>
+                  <%= "下書き" %>
+                  <% else %>
+                   <%= "公開中" %>
+                   <% end %>
+                </td>
 
                 <td>
                   <%= link_to "Detail", work_path(work.id), class: "postManage__preview" %>

@@ -61,6 +61,11 @@
       <div id="marked-area"></div>
     </div>
 
+    <div class="adminnew_contents__form__item">
+    Status<br>
+      <%= form.select :status, Vlog.statuses.keys.map { |k| [t("enums.vlog.status.#{k}"),k]} %>
+    </div>
+    
     <%= form.submit 'Edit', class: :adminnew_contents__form__btn %>
     <%= link_to "Dashboard", posts_path, class: "adminnew_contents__form__back" %>
 

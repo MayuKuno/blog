@@ -86,6 +86,7 @@ gem 'wysiwyg-rails'
 gem 'fog-aws'
 gem 'marked-rails'
 gem 'gon'
+gem 'enum_help'
 group :production do
   gem 'unicorn'
 

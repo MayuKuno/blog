@@ -1,7 +1,8 @@
 class VlogsController < ApplicationController
 
   def index
-    @vlogs = Vlog.all.page(params[:page]).per(6)
+    @vlogs = Vlog.published.page(params[:page]).per(6)
+    # Blog.where(status: :published)と同義
     @categories = Category.all
 
   end
@@ -33,9 +34,11 @@ class VlogsController < ApplicationController
     redirect_to posts_path
   end
 
+
+
   private
   def vlog_params
-    params.require(:vlog).permit(:title, :content, :image, :description, category_ids: [])
+    params.require(:vlog).permit(:title, :content, :image, :description, :status, category_ids: [])
   end
 
 

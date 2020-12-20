@@ -1,6 +1,8 @@
 class WorksController < ApplicationController
   def index
-    @works = Work.all
+    # @works = Work.all
+    @works = Work.published
+
  end
   def new
     @work = Work.new
@@ -36,7 +38,7 @@ class WorksController < ApplicationController
 
   private
   def work_params
-    params.require(:work).permit(:title, :description, :image, :concept, :period, :website , :readme, language_ids: [])
+    params.require(:work).permit(:title, :description, :image, :concept, :period, :website , :readme,:status  ,language_ids: [])
   end
   
 end

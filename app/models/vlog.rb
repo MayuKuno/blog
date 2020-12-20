@@ -4,5 +4,6 @@ class Vlog < ApplicationRecord
   
   has_many :vlog_categories, dependent: :destroy
   has_many :categories,  through:  :vlog_categories, dependent: :destroy
-   
+  enum status: { draft: 0, published: 1 }
+  
 end

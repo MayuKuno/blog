@@ -31,3 +31,12 @@
 
 en:
   hello: "Hello world"
+  enums:
+    vlog:
+      status:
+        draft: '下書き'
+        published: '公開'
+    work:
+      status:
+        draft: '下書き'
+        published: '公開'

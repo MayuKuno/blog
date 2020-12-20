@@ -59,6 +59,10 @@
     <%= form.text_field :readme, class: :adminnew_contents__form__title %>
     <div class="adminnew_contents__form__item">WEBSITE URL</div>
     <%= form.text_field :website, class: :adminnew_contents__form__title %>
+    <div class="adminnew_contents__form__item">
+    Status<br>
+      <%= form.select :status, Work.statuses.keys.map { |k| [t("enums.work.status.#{k}"),k]} %>
+    </div>
 
     <%= form.submit 'Post it', class: :adminnew_contents__form__btn %>
   <% end %>

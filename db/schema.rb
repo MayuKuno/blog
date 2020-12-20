@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_10_075242) do
+ActiveRecord::Schema.define(version: 2020_12_20_020313) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 2020_10_10_075242) do
     t.datetime "updated_at", null: false
     t.string "image"
     t.string "description"
+    t.integer "status", default: 0, null: false
     t.index ["content"], name: "index_vlogs_on_content", unique: true
     t.index ["title"], name: "index_vlogs_on_title", unique: true
   end
@@ -115,6 +116,7 @@ ActiveRecord::Schema.define(version: 2020_10_10_075242) do
     t.string "period", default: "", null: false
     t.string "readme"
     t.string "website"
+    t.integer "status", default: 0, null: false
     t.index ["description"], name: "index_works_on_description", unique: true
     t.index ["image"], name: "index_works_on_image", unique: true
     t.index ["title"], name: "index_works_on_title", unique: true
