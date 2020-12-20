@@ -7,10 +7,14 @@
     end
 
     def create
-      @inquiry = Contact.create(contact_params)
-      # if @inquiry.save
-      InquiryMailer.send_mail(@inquiry).deliver_now
-      redirect_to root_path
+      @inquiry = Contact.new(contact_params)
+      if @inquiry.save
+        InquiryMailer.send_mail(@inquiry).deliver_now
+        redirect_to root_path
+      else
+        redirect_to root_path
+
+      end
       
       # else
       #   render :index
