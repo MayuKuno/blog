@@ -50,7 +50,22 @@
     <div class="adminnew_contents__form__item">Title</div>
     <%= form.text_field :title, class: :adminnew_contents__form__title %>
     <div class="adminnew_contents__form__item">Overview</div>
-    <%= form.text_area :description, class: :adminnew_contents__form__content %>
+    <%#= form.text_area :description, class: :adminnew_contents__form__content %>
+    
+
+    <div class="form-group">
+      <div id='editor'>
+        <textarea name="work[description]" class="form-control adminnew_contents__form__content" rows="20"></textarea>
+      </div>
+    </div>
+    <div class="adminnew_contents__form__preview">
+      Preview
+      <div id="marked-area"></div>
+    </div>
+
+
+
+
     <div class="adminnew_contents__form__item">制作の目的</div>
     <%= form.text_area :concept, class: :adminnew_contents__form__description %>
     <div class="adminnew_contents__form__item">作成期間</div>
