@@ -15,7 +15,7 @@ class WorksController < ApplicationController
   def show
 
     @work = Work.find(params[:id])
-
+    gon.description = @work.description
   end
   def edit
     @work = Work.find(params[:id])

@@ -41,7 +41,13 @@
         OVERVIEW
         </div>
         <div class="work__show__contents__bottom__items__overview__right">
-        <%= @work.description%>
+        <%#= @work.description%>
+        <div id="marked-area">
+        </div>
+        <script>
+        document.getElementById('marked-area').innerHTML =
+        marked(gon.description);
+      </script>
         <div class="work__show__contents__bottom__items__overview__right__website">
          <a href="<%= @work.readme %>" target="_blank">READMEへ</a>
         </div>
