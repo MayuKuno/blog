@@ -16,6 +16,8 @@ class WorksController < ApplicationController
 
     @work = Work.find(params[:id])
     gon.description = @work.description
+    gon.concept = @work.concept
+
   end
   def edit
     @work = Work.find(params[:id])
