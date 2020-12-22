@@ -1,15 +1,40 @@
-@import "reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "common";
-@import "works";
-@import "about";
-@import "contact";
-@import "reset";
-@import "blogs";
-@import "post";
-@import "devise";
-@import "category";
 
-// @import "bootstrap";
-@import "tagsinput";
+// vendors
+@import "vendors/reset";
+@import "vendors/tagsinput";
+
+
+//config
+@import "config/color";
+@import "config/font";
+
+
+//modules/about
+@import "modules/common/common";
+
+//modules/work
+@import "modules/work/works";
+
+
+//modules/about
+@import "modules/about/about";
+
+//modules/contact
+@import "modules/contact/contact";
+
+@import "modules/vlog/blogs";
+
+@import "modules/post/post";
+
+@import "modules/devise/devise";
+
+
+
+// breakpoints
+@import "breakpoints/-960/contact/contact";
+@import "breakpoints/-960/common/common";
+
+
+

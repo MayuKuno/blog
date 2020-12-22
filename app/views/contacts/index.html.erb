@@ -1,84 +1,64 @@
 <%= render 'layouts/header'%>
 <div class="contents">
-<!-- ====================top==================== -->
   <div class="contents__top">
-   <div class="contents__top__introduction">
-    <h1>
-    Hello, my name is Mayu.<br> I am just a queer individual who is hooked on coding.
-    </h1>
+    <div class="contents__top__introduction">
+      <h1>
+        Hello, my name is Mayu.<br> I am just a queer individual who is hooked on coding.
+      </h1>
     </div>
     <div class="contents__top__photo">
       <img src="/assets/main.jpg" alt="Mayu Kuno"/>
     </div>
   </div>
-<!-- ====================work==================== -->
   <div class="contents__content" >
     <h2 class="contents__content__ttl">Works</h2>
     <div class="contents__content__workList">
     <% @works.first(3).each do |work| %>
-
-          <div class="work">
-          <%= link_to "/works/#{work.id}" do %>
-           <img src="<%= "#{work.image}" %>"> 
-
+      <div class="work">
+        <%= link_to "/works/#{work.id}" do %>
+          <img src="<%= "#{work.image}" %>"> 
             <div class="mask">
               <div class="inside">
-              <%#  <div class="manage">
-                  <ul class="manage__lists">
-                    <li>  
-                      <%= link_to "/works/#{work.id}/edit", method: :get do %> 
-                       <%#  <i class="fas fa-edit"></i> Edit 
-                    <%#   <% end %> 
-                   <%#  </li> 
-                    <li> 
-                      <a class="modal-open-btn"><i class="fas fa-trash-alt"></i> Delete</a> 
-                      <%= link_to "", "/workd/#{work.id}", method: :DELETE, class: 'item-delete-btn', id: 'delete_button'%>  
-                <%#     </li>
-                  </ul>
-                </div>%>
-                <%= link_to "/works/#{work.id}" do %>
+              <%= link_to "/works/#{work.id}" do %>
                 <div class="title">
                   <p><%= work.title %></p>
                 </div>
-                <% end %>
-             </div>
+              <% end %>
+              </div>
             </div>
-            <% end %> 
-          </div>
-    
-
-    <% end %>
+        <% end %> 
+      </div>
+      <% end %>
     </div>
     <div class="contents__content__all">
       <%= link_to "View all works", works_path %>
     </div>
   </div>
 
-<!-- ====================blog==================== -->
   <div class="contents__content">
     <h2 class="contents__content__ttl">Blogs</h2>
     <div class="contents__content__blogList">
       <% @vlogs.first(3).each do |vlog| %>
       <div class="contents__content__blogList__list">
-      <div class="contents__content__blogList__list__img">
-         <%= link_to vlog_path(vlog.id), target: "_blank" do %>
+        <div class="contents__content__blogList__list__img">
+        <%= link_to vlog_path(vlog.id), target: "_blank" do %>
           <img src="<%= "#{vlog.image}" %>"> 
-         <% end %> 
-      </div>
-          <div class="contents__content__blogList__list__title">
-            <%= link_to vlog.title, vlog_path(vlog.id) %>
-          </div>
-          <% vlog.categories.each do |category| %>
-          <li class = "contents__content__blogList__list__category">
-              <%= link_to category.text, category_path(category.id), class: "contents__content__blogList__list__title__category__link" %>
-          </li>
-          <% end %>
-          <div class="contents__content__blogList__list__time">
-            <%= vlog.created_at.strftime '%Y-%m-%d' %>
-          </div>
-          <div class="contents__content__blogList__list__description">
-            <%= vlog.description %>
-          </div>
+        <% end %> 
+        </div>
+        <div class="contents__content__blogList__list__title">
+          <%= link_to vlog.title, vlog_path(vlog.id) %>
+        </div>
+        <% vlog.categories.each do |category| %>
+        <li class = "contents__content__blogList__list__category">
+          <%= link_to category.text, category_path(category.id), class: "contents__content__blogList__list__title__category__link" %>
+        </li>
+        <% end %>
+        <div class="contents__content__blogList__list__time">
+          <%= vlog.created_at.strftime '%Y-%m-%d' %>
+        </div>
+        <div class="contents__content__blogList__list__description">
+          <%= vlog.description %>
+        </div>
       </div>
       <% end %>
     </div>
@@ -86,7 +66,6 @@
     <%= link_to "View all blogs", vlogs_path %>
   </div>
 
-<!-- ====================getintouch==================== -->
   <div class="contents__content">
     <h2 class="contents__content__ttl">Get in touch</h2>
     <div class="contents__content__form">
@@ -117,7 +96,6 @@
         
   </div>
 
-<!-- ====================form==================== -->
   <div id="getintouch" class="contents__content">
       <div class="social-btns">
         <a class="btn twitter" href="https://twitter.com/CoderNinefs" target="_blank">
@@ -135,6 +113,7 @@
       </div>
     </div>
 </div>
+
 <button type="button" class="back-to-top">
     <span class="label">
        <img src="/assets/sprites.png" />

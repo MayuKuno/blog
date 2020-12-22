@@ -1,0 +1,424 @@
+
+.contents{
+  &__top{
+    padding-top:100px;
+    padding-bottom: 50px;
+    &__introduction{
+      font-size:$fontMedium;
+      line-height:1.5em;
+      width: 60%;
+      margin: 0 auto;
+      margin-bottom: 70px;
+      h1{
+        font-size: $fontMedium;
+        font-weight: normal;
+      }
+    }
+    &__photo{
+      img{
+        display:block;
+        width:100%;
+      }
+    }
+  }
+  &__content{
+    margin-top: 60px;
+    &__ttl{
+      background-color: $maincolor;
+      font-size: $fontSmall;
+      color: $beige;
+      width: 180px;
+      height: 30px;
+      padding-right: 20px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    &__workList{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      flex-wrap: wrap;
+      margin-top: 100px;
+      margin-bottom: 100px;
+      .work {
+        a{
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+        width:			30%;
+        overflow:		hidden;
+        margin:			10px 8px 10px 16px;
+        position:		relative;	/* 相対位置指定 */
+        img{
+           height:			100%;
+          width: 100%;
+          object-fit:cover;
+    
+        }
+    
+        .mask {
+          width:			100%;
+          height:			100%;
+          position:		absolute;	/* 絶対位置指定 */
+          top:			0;
+          left:			0;
+          opacity:		0;	/* マスクを表示しない */
+          background-color:	rgba(0,0,0,0.7);	/* マスクは半透明 */
+          transition:		all 0.2s ease;
+        }
+        .mask:hover  {
+          opacity:		1;	/* マスクを表示する */
+        }
+    
+        .inside {
+        
+          .title{
+            position: absolute;
+            bottom: 0px;
+            padding: 2px 20px;
+            height: 60%;
+            width: 100%;
+
+            p{
+              color: $white;
+              font-size: $fontMedium;
+              font-weight: bold;
+              text-align: center;
+            }
+          }
+    
+        }
+      }
+
+    }
+   
+    &__blogList{
+        display: flex;
+        justify-content: space-between;
+        
+        width: 100%;
+        flex-wrap: wrap;
+        &__list{
+          height: 350px;
+          width: 350px;
+          margin: 0 auto;
+          box-shadow: 0 1rem 3rem rgba(0,0,0,0.175) !important;
+          border: 1px solid #e0e0e0;
+          width: 350px;
+          text-align:center;
+          margin-top: 50px;
+          position: relative;
+          padding-bottom: 50px;
+          &__img{
+            overflow: hidden;
+            width: 100%;
+            object-fit:cover;
+
+
+          }
+          img{
+            width: 100%;
+            height: 220px;
+            transition-duration: 0.5s;
+
+          }
+          img:hover{
+            transform: scale(1.2);
+            transition-duration: 0.5s;
+          }
+          &__title{
+             margin: 5px;
+            a{
+              text-decoration: none;
+              color: $black;
+              font-weight: bold;
+              font-size: $fontSmall;
+            }
+          }
+          &__title:hover {
+            position: relative;
+            top: 1px;
+            left: 1px;
+          }
+          &__category{
+            background-color: #494c4e;
+            padding: 0.35em 0.7em;
+            border-radius: 10rem;
+            display: inline-block;
+            font-size:$fontSmallest;
+            margin-right:10px;
+            a{
+              text-decoration: none;
+              color: $white;
+            }
+          }
+          &__category:hover {
+            position: relative;
+            top: 1px;
+            left: 1px;
+          }
+          &__time{
+            margin-top:6px;
+            font-size:$fontSmallest;
+          }
+          &__description{
+            padding-top: 7px;
+            font-size:$fontSmallest;
+            height: 60px;
+            width: 80%;
+            margin: 0 auto;
+          
+          }
+          &__details{
+            padding: 8px 12px;
+            background-color: $maincolor;
+            width: 60px;
+            height: 35px;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            a{
+              text-decoration: none;
+              color: $white;
+            }
+          }
+  
+  
+        }
+    
+    }
+    &__all{
+      width: 130px;
+      height: 40px;
+      background-color: $maincolor;
+      border-radius: 5px;
+      margin: 40px auto;
+      text-align: center;
+      a{
+        text-decoration: none;
+        color: $white;
+        line-height: 40px;
+      }
+    }
+    &__all:hover{
+      width: 130px;
+      height: 40px;
+      border-radius: 5px;
+      margin: 40px auto;
+      text-align: center;
+      background-color: $white;
+      border: 1px solid $maincolor;
+
+     a{
+        text-decoration: none;
+        color: $maincolor;
+        line-height: 40px;
+      }
+    
+      
+    
+    }
+
+
+    &__form{
+      padding: 0 80px;
+    }
+    @mixin clearfix {
+      &:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    }
+    .align-center {
+      text-align: center;
+    }
+
+    .row {
+      @include clearfix;
+      margin-top: 60px;
+      margin-bottom: 20px;
+      .col {
+        padding: 0 20px;
+        float: left;
+        &.x-50 {
+            width: 50%;
+        }
+        &.x-100 {
+            width: 100%;
+        }
+      }
+    }
+    }
+
+    .contact-form {
+      .form-field {
+        position: relative;
+        margin: 60px 0;
+      }
+      .input-text {
+        display: block;
+        width: 100%;
+        height: 36px;
+        border-width: 0 0 2px 0;
+        border-color: $maincolor;
+        font-size: $fontSmall;
+        line-height: 26px;
+        font-weight: 400;
+        
+        &:focus {
+            outline: none;
+        }
+        
+        &:focus,
+        &.not-empty {
+            + .label {
+              transform: translateY(-24px);
+            }
+        }
+      }
+      .label {
+        position: absolute;
+        left: 20px;
+        bottom: 11px;
+        font-size: $fontSmall;
+        line-height: 26px;
+        font-weight: 400;
+        color: $maincolor;
+        cursor: text;
+        transition: transform .2s ease-in-out;
+      }
+      
+      .submit-btn {
+        display: inline-block;
+        background-color: $maincolor;
+        color: $white;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: $fontSmall;
+        line-height: 24px;
+        padding: 8px 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+
+
+      }
+      .submit-btn:hover {
+          position: relative;
+          top: 1px;
+          left: 1px;
+    
+      }
+    }
+      }
+
+
+
+
+/* getintouch */
+
+.social-btns {
+  height: 90px;
+  text-align: center;
+  margin-bottom: 120px;
+  display: flex;
+}
+.social-btns .btn:before {
+  content: '';
+  width: 120%;
+  height: 120%;
+  position: absolute;
+  transform: rotate(45deg);
+}
+.social-btns .btn .fab {
+  font-size: $fontLarge;
+  vertical-align: middle;
+}
+.btn {
+  display: inline-block;
+  border:solid 0.5px #494c4e;
+  line-height: 90px;
+  height: 90px;
+  width: 80%;
+  margin: 0 10px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 9px;
+  cursor: pointer;
+}
+.social-btns .btn:focus:before,
+.social-btns .btn:hover:before {
+  top: -10%;
+  left: -10%;
+}
+.btn:before {
+  transition: all 0.35s;
+  transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+  top: 90%;
+  left: -110%;
+}
+.social-btns .btn:focus .fab,
+.social-btns .btn:hover .fab {
+  color: $white;
+  transform: scale(1);
+}
+
+
+.facebook:before {
+  background-color: #4267B2;
+}
+.home-fb{
+  color: #4267B2;
+}
+.twitter:before {
+  background-color: #3cf;
+}
+.home-twitter{
+  color: #3cf;
+}
+
+.instagram:before {
+  background-color: #D93177;
+}
+.home-insta {
+  color: #D93177;
+}
+.github:before {
+  background-color: #24292e;
+}
+.home-git {
+  color: #24292e;
+}
+
+
+
+
+.back-to-top {
+  border-width: 0;
+  cursor: pointer;
+  display: block;
+  margin: 0;
+  padding: 16px;
+  // width: 100%;
+  margin: 0 auto;
+
+  img{
+    width: 20px;
+  }
+}
+
+
+button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
