@@ -122,10 +122,21 @@
       color:$white!important;
       i{
         color:$white!important;
-
       }
       }
-      
+      .linkedin{
+        border:solid 1px rgb(40,103,178);
+        color:rgb(40,103,178);	
+        font-size:$fontSmall;
+      }
+      .linkedin:hover{
+      border:solid 1px rgb(40,103,178);
+      background:rgb(40,103,178);
+      color:$white!important;
+      i{
+        color:$white!important;
+      }
+      }
     }
     &__bottom{
       margin-top: 10px;

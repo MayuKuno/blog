@@ -1,6 +1,7 @@
 @media screen and (max-width:959px){
   body{
     padding: 30px 30px;
+
   }
   .container{
     &__logo{
@@ -37,6 +38,15 @@
     .footer{
     display: none;
   }
+  // footer{
+  //   .container{
+  //     position: absolute;
+  //     bottom: 30px;
+  //     width: 80%;
+  //     /* margin: 0 auto; */
+  //     right: 10%;
+  //   }
+  // }
   header {
     width: 100%;
     }

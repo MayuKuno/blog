@@ -6,7 +6,7 @@ $(function(){
       $('#lamp').removeClass().addClass('#lamp').addClass(thisclass);
       $('.work__contents__tab-contents>div').each(function(){
         if($(this).hasClass(thisclass)){
-          $(this).fadeIn(800);
+          $(this).stop(true).fadeIn(800);
         }
         else{
           $(this).hide();

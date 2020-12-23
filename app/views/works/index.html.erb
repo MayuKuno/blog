@@ -40,22 +40,8 @@
           <div class="work">
           <%= link_to "/works/#{work.id}" do %>
            <img src="<%= "#{work.image}" %>"> 
-
             <div class="mask">
               <div class="inside">
-              <%#  <div class="manage">
-                  <ul class="manage__lists">
-                    <li>  
-                      <%= link_to "/works/#{work.id}/edit", method: :get do %> 
-                       <%#  <i class="fas fa-edit"></i> Edit 
-                    <%#   <% end %> 
-                   <%#  </li> 
-                    <li> 
-                      <a class="modal-open-btn"><i class="fas fa-trash-alt"></i> Delete</a> 
-                      <%= link_to "", "/workd/#{work.id}", method: :DELETE, class: 'item-delete-btn', id: 'delete_button'%>  
-                <%#     </li>
-                  </ul>
-                </div>%>
                 <%= link_to "/works/#{work.id}" do %>
                 <div class="title">
                   <p><%= work.title %></p>
@@ -65,14 +51,6 @@
             </div>
             <% end %> 
           </div>
-
-
-
-
-
-
-
-    
     <% end %>
   </div>
   <!-- ======================================== -->
@@ -80,27 +58,11 @@
     <% @works.each do |work| %>
     <% work.languages.each do |language| %>
     <% if language.text.include?("Ruby") %>
-  
-
           <div class="work">
           <%= link_to "/works/#{work.id}" do %>
            <img src="<%= "#{work.image}" %>"> 
-
             <div class="mask">
               <div class="inside">
-              <%#  <div class="manage">
-                  <ul class="manage__lists">
-                    <li>  
-                      <%= link_to "/works/#{work.id}/edit", method: :get do %> 
-                       <%#  <i class="fas fa-edit"></i> Edit 
-                    <%#   <% end %> 
-                   <%#  </li> 
-                    <li> 
-                      <a class="modal-open-btn"><i class="fas fa-trash-alt"></i> Delete</a> 
-                      <%= link_to "", "/workd/#{work.id}", method: :DELETE, class: 'item-delete-btn', id: 'delete_button'%>  
-                <%#     </li>
-                  </ul>
-                </div>%>
                 <%= link_to "/works/#{work.id}" do %>
                 <div class="title">
                   <p><%= work.title %></p>
@@ -110,16 +72,8 @@
             </div>
             <% end %> 
           </div>
-
-
-
-
     <% else %>
     <% end %>
-
-
-
-
 
     <% end %>
     <% end %>
@@ -137,19 +91,6 @@
 
             <div class="mask">
               <div class="inside">
-              <%#  <div class="manage">
-                  <ul class="manage__lists">
-                    <li>  
-                      <%= link_to "/works/#{work.id}/edit", method: :get do %> 
-                       <%#  <i class="fas fa-edit"></i> Edit 
-                    <%#   <% end %> 
-                   <%#  </li> 
-                    <li> 
-                      <a class="modal-open-btn"><i class="fas fa-trash-alt"></i> Delete</a> 
-                      <%= link_to "", "/workd/#{work.id}", method: :DELETE, class: 'item-delete-btn', id: 'delete_button'%>  
-                <%#     </li>
-                  </ul>
-                </div>%>
                 <%= link_to "/works/#{work.id}" do %>
                 <div class="title">
                   <p><%= work.title %></p>
