@@ -99,16 +99,16 @@
       margin-bottom: 40px;
   
       &__title{
-        width: 800px;
+        width: 100%;
         height: 40px;
-        font-size: 40px;
+        font-size: $fontMedium;
         margin: 0 auto;
         padding-top: 20px;
       }
       &__image{
         margin: 0 auto;
         height: auto;
-        width: 80%;
+        width: 100%;
         margin-top: 80px;
   
         img{
@@ -120,27 +120,27 @@
       // height: 800px;
       // margin:0 200px;
       // padding-top: 40px;
-      width: 80%;
+      width: 100%;
       margin: 0 auto;
      &__items{
           &__overview{
             display: flex;
             border: solid 1px #dce4ec;
             margin: 2em 0 1em;
-            padding: 2.3em 1.9em 3.2em;
+            padding: 15px;
             border-radius: 4px;
             min-height: 180px;
             position: relative;
             &__left{
               font-weight: bold;
-              margin-right: 10px;
+              margin-right: 20px;
               font-size: 14px;
-              width: 20%;
+              width: 30%;
               
             }
             &__right{
               font-size: 12px;
-              width: 80%;
+              width: 70%;
 
               &__website{
                 background-color: #494c4e;
@@ -182,12 +182,12 @@
               font-weight: bold;
               margin-right: 10px;
               font-size: 14px;
-              width: 20%;
+              width: 30%;
 
             }            
             &__right{
             font-size: 12px;
-            width: 80%;
+            width: 70%;
 
             }
 
@@ -203,11 +203,11 @@
               font-weight: bold;
               margin-right: 10px;
               font-size: 14px;
-              width: 20%;
+              width: 30%;
             }            
             &__right{
             font-size: 12px;
-            width: 80%;
+            width: 70%;
 
             }
           }
@@ -221,11 +221,11 @@
               font-weight: bold;
               margin-right: 10px;
               font-size: 14px;
-              width: 20%;
+              width: 30%;
             }            
             &__right{
             font-size: 12px;
-            width: 80%;
+            width: 70%;
 
             }
           }

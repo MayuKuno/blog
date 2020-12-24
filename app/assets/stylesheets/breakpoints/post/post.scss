@@ -274,12 +274,12 @@
       }
       &__preview{
         margin: 0 auto;
-        width: 60%;
+        width: 90%;
         font-weight: bold;      
       }
       &__item{
       margin: 0 auto;
-      width: 60%;
+      width: 90%;
       font-weight: bold;
   
       &__category{
@@ -312,14 +312,14 @@
       }
       &__title{
         display: block;
-        width: 60%;
+        width: 90%;
         height: 40px;
         margin: 20px auto;
         border-radius: 10px;
         border: none;
       }
       &__images{
-        display: flex;
+        display: block;
         margin: auto;
         width: 60%;
         margin-top: 60px;
@@ -329,7 +329,7 @@
           height: 40px;
           margin: 80px auto;
           &__img{
-            width: 200px; ;
+            width: auto;
             margin-right: 20px;
             background-color: beige;
             color: black;
@@ -350,17 +350,17 @@
           }
         }
         &__show{
-          width: 500px;
-          height: 200px;
+          width: 100%;
+          height: auto;
           #img_prev{
-            width: auto;
-            height: 180px;
+            width: 100%;
+            height: auto;
           }
         }
       }
       &__description{
         display: block;
-        width: 60%;
+        width: 90%;
         height: 80px;
         margin: 20px auto;
         border-radius: 10px;
@@ -369,13 +369,13 @@
       }
       &__content{
         display: block;
-        width: 60%;
+        width: 90%;
         height: 300px;
         margin: 20px auto;
       }
       &__category{
         display: block;
-        width: 60%;
+        width: 90%;
         height: 40px;
         margin: 20px auto;
         padding-top: 20px;
@@ -417,7 +417,7 @@
       }
       &__btn{
         display: block;
-        width: 60%;
+        width: 90%;
         height: 40px;
         margin: 20px auto;
   
@@ -437,7 +437,7 @@
      }
      &__back{
       display: block;
-      width: 60%;
+      width: 90%;
       height: 40px;
       margin: 20px auto;
   
