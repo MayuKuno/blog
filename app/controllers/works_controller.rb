@@ -1,6 +1,5 @@
 class WorksController < ApplicationController
   def index
-    # @works = Work.all
     @works = Work.published
 
  end
