@@ -28,7 +28,7 @@
       <div class='work__contents__tabs__tab-buttons'>
         <span class='content1'>All</span>
         <span class='content2'>Ruby on Rails</span>
-        <span class='content3'>Python</span>
+        <span class='content3'>Go</span>
         <div id='lamp' class='content1'></div>
       </div>
     </div>
@@ -83,7 +83,7 @@
   <div class="work__contents__tab-content content3">
     <% @works.each do |work| %>
     <% work.languages.each do |language| %>
-    <% if language.text.include?("Python") %>
+    <% if language.text.include?("Go") %>
 
           <div class="work">
           <%= link_to "/works/#{work.id}" do %>
