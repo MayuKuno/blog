@@ -27,7 +27,7 @@
     <div class="blog__contents__bottom">
       <div class="blog__contents__bottom__articles">
           <span class="blog__contents__bottom__articles__categoryname"> <%= @category.text %></span>
-      <% @category.vlogs.each do |vlog| %>
+      <% @category.vlogs.published.each do |vlog| %>
         <div class="blog__contents__bottom__articles__list">
           <div class="blog__contents__bottom__articles__list__img">
             <%= link_to vlog_path(vlog.id), target: "_blank" do %>
